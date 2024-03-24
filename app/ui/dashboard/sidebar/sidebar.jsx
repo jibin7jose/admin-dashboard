@@ -2,7 +2,7 @@ import styles from './sidebar.module.css'
 import {
     MdAnalytics,
     MdAttachMoney,
-    MdDashboard,
+    MdDashboard, MdLogout,
     MdMiscellaneousServices, MdPeople,
     MdSupervisedUserCircle,
     MdWork
@@ -83,6 +83,9 @@ const Sidebar = () => {
                    </li>
                ))}
            </ul>
+            <button className={styles.logout}>
+                <MdLogout />
+                Logout</button>
         </div>
     );
 }

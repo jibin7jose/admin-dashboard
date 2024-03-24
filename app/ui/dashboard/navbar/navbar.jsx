@@ -1,7 +1,30 @@
+"use client"
+import {
+    MdAnalytics,
+    MdAttachMoney,
+    MdDashboard,
+    MdMiscellaneousServices, MdNotifications, MdOutlineChat, MdPeople, MdPublic, MdSearch,
+    MdSupervisedUserCircle,
+    MdWork
+} from "react-icons/md";
+import {usePathname} from "next/navigation";
+import styles from './navbar.module.css'
 const Navbar = () => {
+    const pathName = usePathname();
     return (
-        <div>
-            <h1>Navbar</h1>
+        <div className={styles.container}>
+            <div className={styles.title}>{pathName.split('/').pop()} navbar</div>
+            <div className={styles.menu}>
+                <div className={styles.search}>
+                    <MdSearch />
+                    <input type='text' placeholder="Search..." className={styles.input} />
+                </div>
+                <div className={styles.icon}>
+                    <MdOutlineChat size={20} />
+                    <MdNotifications size={20} />
+                    <MdPublic size={20} />
+                </div>
+            </div>
         </div>
     );
 }
