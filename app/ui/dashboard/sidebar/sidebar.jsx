@@ -50,12 +50,12 @@ const menuItems = [
                 icon: <MdAnalytics />
             },
             {
-                title: "Teams",
-                path: "/dashboard/teams",
+                title: "Staffs",
+                path: "/dashboard/staffs",
                 icon: <MdPeople />
             },
             {
-                title: "Transactions",
+                title: "Profits",
                 path: "/dashboard/transactions",
                 icon: <MdAttachMoney />
             },
@@ -88,7 +88,7 @@ const Sidebar = () => {
                 Logout
             </button>
             <div className={styles.logo}>
-                <h2 id='logo'>compName™</h2>
+                <h2 id='logo'>solidServe™</h2>
             </div>
 
         </div>
