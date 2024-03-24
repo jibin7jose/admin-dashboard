@@ -88,7 +88,7 @@ const Sidebar = () => {
                 Logout
             </button>
             <div className={styles.logo}>
-                <h1 id='logo'>compName™</h1>
+                <h2 id='logo'>compName™</h2>
             </div>
 
         </div>
