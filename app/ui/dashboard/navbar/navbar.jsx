@@ -13,7 +13,7 @@ const Navbar = () => {
     const pathName = usePathname();
     return (
         <div className={styles.container}>
-            <div className={styles.title}>{pathName.split('/').pop()} navbar</div>
+            <div className={styles.title}>{pathName.split('/').pop()}</div>
             <div className={styles.menu}>
                 <div className={styles.search}>
                     <MdSearch />
