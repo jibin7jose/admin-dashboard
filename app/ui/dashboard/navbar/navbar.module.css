@@ -4,10 +4,7 @@
     background-color: var(--bgSoft);
     display: flex;
     align-items: center;
-    width: 100%;
-    max-width: 100%; /* Ensure container doesn't exceed screen width */
     justify-content: space-between;
-    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .title {

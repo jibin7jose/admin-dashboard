@@ -6,6 +6,7 @@
     flex: 1;
     background-color: var(--bgSoft);
     padding: 20px;
+    min-height: 100vh;
 }
 
 .content {
@@ -31,6 +32,7 @@
     gap: 20px;
     justify-content: space-between;
 }
+
 .side {
     flex: 1;
 }

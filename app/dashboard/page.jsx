@@ -8,11 +8,9 @@ function Dashboard() {
         <div className={styles.wrapper}>
             <div className={styles.main}>
                 <div className={styles.cards}>
-                    <div>
-                        <Card />
-                        <Card />
-                        <Card />
-                    </div>
+                    <Card />
+                    <Card />
+                    <Card />
                 </div>
                 <Transactions />
                 <Chart />
@@ -23,5 +21,4 @@ function Dashboard() {
         </div>
     );
 }
-
 export default Dashboard;
