@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Cards and Rightbar">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.jsx" afterDir="false" />
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Main section and Rightbar">
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ui/dashboard/dashboard.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/dashboard.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,7 @@
       <updated>1711263724105</updated>
       <workItem from="1711263725249" duration="2090000" />
       <workItem from="1711265816223" duration="112000" />
-      <workItem from="1711265928936" duration="7861000" />
+      <workItem from="1711265928936" duration="8612000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -182,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711282412416</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Configuring Main section and Rightbar">
+      <option name="closed" value="true" />
+      <created>1711293097742</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711293097742</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +202,7 @@
     <MESSAGE value="Configured Navbar" />
     <MESSAGE value="Configured Sidebar" />
     <MESSAGE value="Configuring Cards and Rightbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring Cards and Rightbar" />
+    <MESSAGE value="Configuring Main section and Rightbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring Main section and Rightbar" />
   </component>
 </project>

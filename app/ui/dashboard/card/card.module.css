@@ -1,3 +1,30 @@
 .container {
     display: flex;
+    background-color: var(--bg);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.title {
+
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.number {
+
+}
+
+.positive {
+
+}
+
+.detail {
+
 }
