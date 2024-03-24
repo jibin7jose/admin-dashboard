@@ -4,13 +4,18 @@
     background-color: var(--bgSoft);
     display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 100%; /* Ensure container doesn't exceed screen width */
     justify-content: space-between;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
+
 .title {
     color: var(--textSoft);
     font-weight: bold;
     text-transform: capitalize;
 }
+
 .menu {
     display: flex;
     align-items: center;
@@ -29,5 +34,10 @@
 .input {
     background-color: transparent;
     border: none;
-    color: var(--text)
+    color: var(--text);
+}
+
+.icons{
+    display: flex;
+    gap: 20px;
 }
