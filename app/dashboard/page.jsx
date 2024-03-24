@@ -1,8 +1,6 @@
 function Dashboard() {
     return (
-        <div>
-            dash
-        </div>
+        <div>my dash</div>
     );
 }
 

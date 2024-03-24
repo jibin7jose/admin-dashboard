@@ -4,30 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f780987f-89ef-441a-81ca-9883e1e4544b" name="Changes" comment="Configuring Sidebar">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/customers/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/dashboard.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/menuLink/menuLink.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/menuLink/menuLink.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/astronaut.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/noavatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/noproduct.jpg" beforeDir="false" />
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +15,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Nabiel &lt;132735141+naybyal@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
+  "associatedIndex": 6
 }]]></component>
-  <component name="ProjectId" id="2e7ZYB9sjP7FPXtC4UD4xWdvPny" />
+  <component name="ProjectId" id="2e7lv8A8gMroDzGCpl6EE8o90FS" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -54,16 +38,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "starter",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/nabiel/WebstormProjects/admin-dashboard",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/nabiel/IDEs/WebStorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,71 +60,57 @@
       </map>
     </option>
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/ui/dashboard" />
-      <recent name="$PROJECT_DIR$/app/ui" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f780987f-89ef-441a-81ca-9883e1e4544b" name="Changes" comment="" />
-      <created>1711257621561</created>
+      <changelist id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="" />
+      <created>1711263724105</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711257621561</updated>
-      <workItem from="1711257622872" duration="6100000" />
+      <updated>1711263724105</updated>
+      <workItem from="1711263725249" duration="2090000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
-      <created>1711257917064</created>
+      <created>1711263783852</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1711257917064</updated>
+      <updated>1711263783853</updated>
     </task>
     <task id="LOCAL-00002" summary="Initial commit">
       <option name="closed" value="true" />
-      <created>1711257952027</created>
+      <created>1711265518722</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1711257952027</updated>
+      <updated>1711265518722</updated>
     </task>
     <task id="LOCAL-00003" summary="Initial commit">
       <option name="closed" value="true" />
-      <created>1711258099998</created>
+      <created>1711265562847</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1711258099998</updated>
+      <updated>1711265562847</updated>
     </task>
     <task id="LOCAL-00004" summary="Initial commit">
       <option name="closed" value="true" />
-      <created>1711260143732</created>
+      <created>1711265610407</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1711260143732</updated>
+      <updated>1711265610407</updated>
     </task>
-    <task id="LOCAL-00005" summary="Configuring Sidebar">
-      <option name="closed" value="true" />
-      <created>1711263517643</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1711263517643</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <MESSAGE value="Configuring Sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring Sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/nextadmin.iml" filepath="$PROJECT_DIR$/.idea/nextadmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/admin-dashboard.iml" filepath="$PROJECT_DIR$/.idea/admin-dashboard.iml" />
     </modules>
   </component>
 </project>
