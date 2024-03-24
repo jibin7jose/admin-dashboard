@@ -26,7 +26,7 @@ const menuItems = [
             },
             {
                 title: "Services",
-                path: "/dashboard/services",
+                path: "/dashboard/rightbar",
                 icon: <MdMiscellaneousServices />
             },
             {

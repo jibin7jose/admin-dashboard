@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configured Sidebar" />
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configured Sidebar">
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/nabiel/WebstormProjects/admin-dashboard",
+    "last_opened_file_path": "/home/nabiel/WebstormProjects/admin-dashboard/app/ui/dashboard",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,6 +68,11 @@
       </map>
     </option>
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/ui/dashboard" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +83,7 @@
       <updated>1711263724105</updated>
       <workItem from="1711263725249" duration="2090000" />
       <workItem from="1711265816223" duration="112000" />
-      <workItem from="1711265928936" duration="4393000" />
+      <workItem from="1711265928936" duration="5038000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -157,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711281521493</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Configured Sidebar">
+      <option name="closed" value="true" />
+      <created>1711281737669</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711281737669</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
