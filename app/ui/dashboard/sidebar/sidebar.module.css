@@ -49,8 +49,17 @@
     border: none;
     width: 100%;
     color: white;
+    transition: background-color 0.3s ease-in;
 }
 
 .logout:hover {
-    background-color: #2e374a;
+    background-color: red;
+
+}
+
+.logo {
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
 }

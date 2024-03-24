@@ -85,7 +85,12 @@ const Sidebar = () => {
            </ul>
             <button className={styles.logout}>
                 <MdLogout />
-                Logout</button>
+                Logout
+            </button>
+            <div className={styles.logo}>
+                <h1 id='logo'>solidServe</h1>
+            </div>
+
         </div>
     );
 }
