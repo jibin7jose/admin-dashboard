@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Main section and Rightbar">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Fixed Navbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/dashboard.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/dashboard.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <updated>1711263724105</updated>
       <workItem from="1711263725249" duration="2090000" />
       <workItem from="1711265816223" duration="112000" />
-      <workItem from="1711265928936" duration="10184000" />
+      <workItem from="1711265928936" duration="11223000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -208,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711294812802</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed Navbar">
+      <option name="closed" value="true" />
+      <created>1711295531439</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711295531439</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +228,7 @@
     <MESSAGE value="Configured Sidebar" />
     <MESSAGE value="Configuring Cards and Rightbar" />
     <MESSAGE value="Configuring Main section and Rightbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring Main section and Rightbar" />
+    <MESSAGE value="Fixed Navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Navbar" />
   </component>
 </project>

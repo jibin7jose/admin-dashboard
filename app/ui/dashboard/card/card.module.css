@@ -5,6 +5,12 @@
     border-radius: 10px;
     gap: 20px;
     cursor: pointer;
+    width: 100%;
+}
+
+.container:hover {
+    background-color: #2e374a;
+    transition: background-color 0.3s ease-in;
 }
 
 .title {
