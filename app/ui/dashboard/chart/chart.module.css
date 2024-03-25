@@ -1,3 +1,12 @@
 .container {
-    display: flex;
+    background-color: var(--bgSoft);
+    padding: 25px;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.title {
+    font-weight: 200;
+    color: var(--textSoft);
+    margin-bottom: 20px;
 }

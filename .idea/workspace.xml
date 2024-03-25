@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Themes">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Charts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +83,7 @@
       <workItem from="1711265928936" duration="12601000" />
       <workItem from="1711336948606" duration="1272000" />
       <workItem from="1711376940686" duration="1589000" />
+      <workItem from="1711380201769" duration="1656000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -278,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711377010765</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Configuring Themes">
+      <option name="closed" value="true" />
+      <created>1711380519641</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1711380519641</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +309,7 @@
     <MESSAGE value="Fixed Navbar" />
     <MESSAGE value="Implementing Transactions Table." />
     <MESSAGE value="Configuring Themes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring Themes" />
+    <MESSAGE value="Configuring Charts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring Charts" />
   </component>
 </project>
