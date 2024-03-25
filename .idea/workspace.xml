@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Implementing Transactions Table.">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Themes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ui/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +77,7 @@
       <workItem from="1711263725249" duration="2090000" />
       <workItem from="1711265816223" duration="112000" />
       <workItem from="1711265928936" duration="12601000" />
-      <workItem from="1711336948606" duration="298000" />
+      <workItem from="1711336948606" duration="987000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -231,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711297116205</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Configuring Themes">
+      <option name="closed" value="true" />
+      <created>1711337308290</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711337308291</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +254,7 @@
     <MESSAGE value="Configuring Main section and Rightbar" />
     <MESSAGE value="Fixed Navbar" />
     <MESSAGE value="Implementing Transactions Table." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Transactions Table." />
+    <MESSAGE value="Configuring Themes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring Themes" />
   </component>
 </project>

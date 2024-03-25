@@ -40,7 +40,7 @@
 
 .logout {
     padding: 20px;
-    margin: 5px 0;
+    /*margin: 5px 0;*/
     display: flex;
     align-items: center;
     gap: 10px;
@@ -49,7 +49,10 @@
     background: none;
     border: none;
     width: 100%;
-    color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 10px 0 ;
     transition: background-color 0.3s ease-in;
 }
 
