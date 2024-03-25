@@ -31,7 +31,7 @@ const Transactions = () => {
                         John Doe
                     </td>
                     <td>
-                        <span className={`${styles.status} ${styles.done}`}>Pending</span>
+                        <span className={`${styles.status} ${styles.done}`}>Done</span>
                     </td>
                     <td>21/03/2024</td>
                     <td>Rs. 150</td>
@@ -42,7 +42,7 @@ const Transactions = () => {
                         John Doe
                     </td>
                     <td>
-                        <span className={`${styles.status} ${styles.cancelled}`}>Pending</span>
+                        <span className={`${styles.status} ${styles.cancelled}`}>Cancelled</span>
                     </td>
                     <td>21/03/2024</td>
                     <td>Rs. 150</td>
