@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Implementing Transactions Table.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/nabiel/WebstormProjects/admin-dashboard/app/ui/dashboard",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/nabiel/IDEs/WebStorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nabiel/WebstormProjects/admin-dashboard/app/ui/dashboard&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/nabiel/IDEs/WebStorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -76,7 +76,8 @@
       <updated>1711263724105</updated>
       <workItem from="1711263725249" duration="2090000" />
       <workItem from="1711265816223" duration="112000" />
-      <workItem from="1711265928936" duration="11905000" />
+      <workItem from="1711265928936" duration="12601000" />
+      <workItem from="1711336948606" duration="298000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -222,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711296495577</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Implementing Transactions Table.">
+      <option name="closed" value="true" />
+      <created>1711297116205</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711297116205</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
