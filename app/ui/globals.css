@@ -1,8 +1,8 @@
 :root {
-    --bg: #fafafa;
-    --bgSoft: #ADD8E6;
-    --text: black;
-    --textSoft: #484b6a;
+    --bg: #151c2c;
+    --bgSoft: #182237;
+    --text: white;
+    --textSoft: #b7bac1;
 }
 * {
     margin: 0;
