@@ -40,11 +40,6 @@ const menuItems = [
         title: "Analytics",
         list: [
             {
-                title: "Revenue",
-                path: "/dashboard/revenue",
-                icon: <MdWork />
-            },
-            {
                 title: "Reports",
                 path: "/dashboard/reports",
                 icon: <MdAnalytics />
@@ -67,7 +62,7 @@ const Sidebar = () => {
     return (
         <div className={styles.container}>
             <div className={styles.logo}>
-                <h2 id='logo'>solidServe™</h2>
+                <h2 className={styles.logoContent}>solidServe™</h2>
             </div>
             <div className={styles.user}>
                 <Image className={styles.userImage} src="/noavatar.png" href="public/noavatar.png" height="50"
