@@ -1,7 +1,33 @@
 .container {
-
+    position: fixed;
 }
 
 .item {
+    position: relative;
+    background: linear-gradient(to top, #182237, #253352);
+    padding: 20px 0;
+    border-radius: 10px;
+    margin-bottom: 20px;
 
 }
+
+.bgContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+
+}
+
+.bg {
+    object-fit: cover;
+    opacity: 0.2;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+

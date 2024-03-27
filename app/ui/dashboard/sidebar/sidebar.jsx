@@ -66,30 +66,32 @@ const menuItems = [
 const Sidebar = () => {
     return (
         <div className={styles.container}>
+            <div className={styles.logo}>
+                <h2 id='logo'>solidServe™</h2>
+            </div>
             <div className={styles.user}>
-                <Image className={styles.userImage} src="/noavatar.png" href="public/noavatar.png" height="50" width="50" alt='No avatar'></Image>
+                <Image className={styles.userImage} src="/noavatar.png" href="public/noavatar.png" height="50"
+                       width="50" alt='No avatar'></Image>
                 <div className={styles.userDetail}>
                     <span className={styles.username}>Nabiel</span>
                     <span className={styles.userTitle}>Entrepreneur</span>
                 </div>
             </div>
-           <ul className={styles.list}>
-               {menuItems.map(category => (
-                   <li key={category.title}>
-                       <span className={styles.category}>{category.title}</span>
-                       {category.list.map(item=>(
-                           <MenuLink item={item} key={item.title}></MenuLink>
-                       ))}
-                   </li>
-               ))}
-           </ul>
+            <ul className={styles.list}>
+                {menuItems.map(category => (
+                    <li key={category.title}>
+                        <span className={styles.category}>{category.title}</span>
+                        {category.list.map(item => (
+                            <MenuLink item={item} key={item.title}></MenuLink>
+                        ))}
+                    </li>
+                ))}
+            </ul>
             <button className={styles.logout}>
-                <MdLogout />
+                <MdLogout/>
                 Logout
             </button>
-            <div className={styles.logo}>
-                <h2 id='logo'>solidServe™</h2>
-            </div>
+
 
         </div>
     );
