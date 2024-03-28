@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Abuse Recorder Front-end.">
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/footer/footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/footer/footer.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/outsource/outsource.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/outsource/outsource.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/staffs/staffs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/customers/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/outsource/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/chart/chart.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/menuLink/menuLink.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/menuLink/menuLink.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/transactions/transactions.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +95,7 @@
       <workItem from="1711380201769" duration="2509000" />
       <workItem from="1711475974234" duration="195000" />
       <workItem from="1711545673194" duration="4281000" />
-      <workItem from="1711596141866" duration="2425000" />
+      <workItem from="1711596141866" duration="6479000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -362,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711598442940</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Configuring Abuse Recorder Front-end.">
+      <option name="closed" value="true" />
+      <created>1711598613960</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1711598613960</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

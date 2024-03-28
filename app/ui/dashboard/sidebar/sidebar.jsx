@@ -20,8 +20,8 @@ const menuItems = [
                 icon: <MdDashboard />
             },
             {
-                title: "Customers",
-                path: "/dashboard/customers",
+                title: "Outsource",
+                path: "/dashboard/outsource",
                 icon: <MdSupervisedUserCircle />
             },
             {
@@ -60,10 +60,7 @@ const menuItems = [
 
 const Sidebar = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.logo}>
-                <h2 className={styles.logoContent}>solidServe™</h2>
-            </div>
+        <div>
             <div className={styles.user}>
                 <Image className={styles.userImage} src="/noavatar.png" href="public/noavatar.png" height="50"
                        width="50" alt='No avatar'></Image>
