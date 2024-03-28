@@ -1,7 +1,7 @@
 import styles from './rightbar.module.css'
 import Abuse from 'public/abuse.png'
 import Image from 'next/image'
-import {MdCrisisAlert, MdEmergencyRecording} from "react-icons/md";
+import {MdEmergencyRecording} from "react-icons/md";
 const Rightbar = () => {
     return (
         <div className={styles.container}>
