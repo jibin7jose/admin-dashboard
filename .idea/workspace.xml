@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Reconfiguring Sidebar">
+      <change afterPath="$PROJECT_DIR$/public/abuse.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/abuse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,8 @@
       <workItem from="1711376940686" duration="1589000" />
       <workItem from="1711380201769" duration="2509000" />
       <workItem from="1711475974234" duration="195000" />
-      <workItem from="1711545673194" duration="3352000" />
+      <workItem from="1711545673194" duration="4281000" />
+      <workItem from="1711596141866" duration="1694000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -331,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711549500040</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Reconfiguring Sidebar">
+      <option name="closed" value="true" />
+      <created>1711551978651</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1711551978651</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
