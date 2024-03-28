@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring Abuse Recorder Front-end.">
-      <change afterPath="$PROJECT_DIR$/public/abuse.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/rightbar/rightbar.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
       <workItem from="1711380201769" duration="2509000" />
       <workItem from="1711475974234" duration="195000" />
       <workItem from="1711545673194" duration="4281000" />
-      <workItem from="1711596141866" duration="2111000" />
+      <workItem from="1711596141866" duration="2425000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -346,7 +346,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711597972301</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Configuring Abuse Recorder Front-end.">
+      <option name="closed" value="true" />
+      <created>1711598408224</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1711598408224</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Configuring Abuse Recorder Front-end.">
+      <option name="closed" value="true" />
+      <created>1711598442940</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1711598442940</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -63,4 +63,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 300ms ease-in;
+}
+.button:hover {
+    background-color: darkred;
+
 }
