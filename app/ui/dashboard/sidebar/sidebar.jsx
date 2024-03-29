@@ -69,6 +69,9 @@ const Sidebar = () => {
                     <span className={styles.userTitle}>Entrepreneur</span>
                 </div>
             </div>
+            <div>
+                <button className={styles.newTransaction}>+ New Transaction</button>
+            </div>
             <ul className={styles.list}>
                 {menuItems.map(category => (
                     <li key={category.title}>

@@ -1,11 +1,72 @@
 .container {
-
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 .top {
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.table {
 
+.addButton {
+    padding: 10px;
+    background-color: springgreen;
+    border-radius: 5px;
+    border: none;
+
+    font-weight: 800;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: green;
+}
+.table {
+    width: 100%;
+}
+.table td {
+    padding: 10px;
+}
+.user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.userImage {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+.button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+
+    font-weight: 800;
+    cursor: pointer;
+
+}
+.view {
+    background-color: whitesmoke;
+    transition: background-color 0.3s ease-in-out;
+}
+.view:hover {
+    background-color: grey;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+.delete:hover {
+    background-color: darkred;
 }
