@@ -1,9 +1,10 @@
-const AddUser = () => {
+import styles from '../../../ui/dashboard/services/addService/add.module.css'
+const AddStaff = () => {
     return (
-        <div>
-
+        <div className={styles.container}>
+            AddStaff
         </div>
     );
 }
 
-export default AddUser;
+export default AddStaff;
