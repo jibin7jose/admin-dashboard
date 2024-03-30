@@ -9,7 +9,7 @@ const ServicesPage = ({placeholder}) => {
         <div className={styles.container}>
             <div className={styles.top}>
                 <Search placeholder="Search for a service..."/>
-                <Link href="/add/">
+                <Link href="services/add/">
                     <button className={styles.addButton}>Add New Service</button>
                 </Link>
 

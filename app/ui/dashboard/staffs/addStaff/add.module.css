@@ -1,3 +1,44 @@
 .container {
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
 
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form input, .form select, .form textarea {
+    padding: 30px;
+    background-color: transparent;
+    border: 2px solid #2e374a;
+    color: var(--text);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.form input, .form select{
+    width: 45%;
+}
+
+.form textarea {
+    width: 100%;
+}
+.form button {
+    width: 100%;
+    padding: 30px;
+    background-color: springgreen;
+    border-radius: 5px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form button:hover {
+    background-color: green;
 }

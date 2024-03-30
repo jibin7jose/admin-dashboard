@@ -15,7 +15,7 @@ const Staffs = () => {
         <div className={styles.container}>
             <div className={styles.top}>
                 <Search placeholder="Search for a staff..."/>
-                <Link href="/add/">
+                <Link href="staffs/add/">
                     <button className={styles.addButton}>Add New Staff</button>
                 </Link>
 
