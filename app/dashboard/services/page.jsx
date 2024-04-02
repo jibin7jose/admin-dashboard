@@ -9,6 +9,7 @@ import {PrismaClient} from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function getService() {
+    'use server'
     return await prisma.services.findMany();
 }
 export default async function ServicesPage(){
