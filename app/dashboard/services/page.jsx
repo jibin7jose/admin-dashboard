@@ -33,7 +33,7 @@ export default async function ServicesPage(){
                 <tbody>
                 {services.map((service) => (
                     <tr key={service.serviceId}>
-                        <td>{service.serviceName}</td>
+                        <td><a href={service.serviceLink}>{service.serviceName}</a></td>
                         <td>{service.serviceCost}</td>
                         <td>{service.serviceProfit}</td>
                         <td>

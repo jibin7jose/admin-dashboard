@@ -19,6 +19,7 @@ model services {
   serviceName   String
   serviceCost   Int
   serviceProfit Int
+  serviceLink   String
 }
 
 model staffs {
