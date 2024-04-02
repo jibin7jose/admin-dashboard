@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Refactoring">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configured the backend">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/action.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/getServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/services/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/add/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/add/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/navbar/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/services/addService/add.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/services/addService/add.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff/add.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff/add.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +52,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nabiel/WebstormProjects/admin-dashboard/app/ui/dashboard&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nabiel/WebstormProjects/manager-dashboard&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -71,6 +76,7 @@
       <recent name="$PROJECT_DIR$/app/ui/dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff" />
       <recent name="$PROJECT_DIR$/app/ui/dashboard/services/addService" />
     </key>
@@ -95,7 +101,11 @@
       <workItem from="1711638455967" duration="2105000" />
       <workItem from="1711683044021" duration="6144000" />
       <workItem from="1711699796934" duration="4092000" />
-      <workItem from="1711777091214" duration="2262000" />
+      <workItem from="1711777091214" duration="2302000" />
+      <workItem from="1711893598261" duration="1697000" />
+      <workItem from="1711989191719" duration="1148000" />
+      <workItem from="1712029084743" duration="524000" />
+      <workItem from="1712033778936" duration="5793000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -433,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711700611059</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Refactoring">
+      <option name="closed" value="true" />
+      <created>1711808701984</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1711808701984</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,6 +473,7 @@
     <MESSAGE value="Created 'Staffs' Page" />
     <MESSAGE value="Changing the font face" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Configured the backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configured the backend" />
   </component>
 </project>

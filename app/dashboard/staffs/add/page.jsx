@@ -1,13 +1,12 @@
 import styles from '../../../ui/dashboard/staffs/addStaff/add.module.css'
 const AddStaff = () => {
+    const { addStaff, deleteStaff, updateStaff } = require('db/db.js');
     return (
         <div className={styles.container}>
-            <form action="" className={styles.form}>
+            <form action="createStaff" className={styles.form}>
 
                 <input type="text" placeholder='First Name' name='fname' required/>
-
                 <input type="text" placeholder='Last Name' name='lname' required/>
-
                 <select name="role" id="role">
                     <option value="general">
                         Choose Role

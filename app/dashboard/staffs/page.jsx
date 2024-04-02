@@ -3,15 +3,13 @@ import Search from "@/app/ui/dashboard/search/search";
 import Link from "next/link";
 import Avatar from 'public/noavatar.png';
 import Image from 'next/image';
-import {
-    Pagination,
-    PaginationContent, PaginationEllipsis,
-    PaginationItem,
-    PaginationLink, PaginationNext,
-    PaginationPrevious
-} from "@/components/ui/pagination";
+
 const Staffs = () => {
+    const next = require('next')
+    const app = next({})
+    const { addStaff, deleteStaff, updateStaff } = require('db/db.js');
     return (
+
         <div className={styles.container}>
             <div className={styles.top}>
                 <Search placeholder="Search for a staff..."/>
