@@ -48,7 +48,7 @@ export default async function ServicesPage(){
                 ))}
                 </tbody>
             </table>
-            {/*<Pagination />*/}
+            <Pagination />
         </div>
     );
-};
+}
