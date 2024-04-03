@@ -6,14 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the loading">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/loading.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/loading.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/addStaff/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/add/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff/add.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff/add.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ui/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +60,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -92,6 +94,16 @@
       <recent name="$PROJECT_DIR$/app/ui/dashboard/services/addService" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -118,7 +130,9 @@
       <workItem from="1712029084743" duration="524000" />
       <workItem from="1712033778936" duration="5793000" />
       <workItem from="1712043349962" duration="4496000" />
-      <workItem from="1712047927857" duration="351000" />
+      <workItem from="1712047927857" duration="3402000" />
+      <workItem from="1712148568491" duration="6301000" />
+      <workItem from="1712163300955" duration="1036000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -504,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712048277357</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Configuring the loading">
+      <option name="closed" value="true" />
+      <created>1712050363190</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1712050363190</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

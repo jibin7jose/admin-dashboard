@@ -42,3 +42,6 @@
 .form button:hover {
     background-color: green;
 }
+.form input .form select .form textarea:focus{
+    background-color: #182237;
+}

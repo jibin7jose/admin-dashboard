@@ -1,8 +1,12 @@
 :root {
-    --bg: #151c2c;
-    --bgSoft: #182237;
-    --text: white;
-    --textSoft: #b7bac1;
+    /*--bg: #151c2c;*/
+    /*--bgSoft: #182237;*/
+    /*--text: white;*/
+    /*--textSoft: #b7bac1;*/
+    --bg: #0d1220;         /* Background color */
+    --bgSoft: #101b2d;     /* Soft background color */
+    --text: #f2f2f2;       /* Text color */
+    --textSoft: #7e8086;   /* Soft text color */
 }
 
 * {
