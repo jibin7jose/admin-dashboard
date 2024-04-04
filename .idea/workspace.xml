@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the loading">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the Add Staffs Page">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/addStaff/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/addService/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/add/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff/add.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/staffs/addStaff/add.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/services/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/add/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,15 +127,8 @@
       <workItem from="1712043349962" duration="4496000" />
       <workItem from="1712047927857" duration="3402000" />
       <workItem from="1712148568491" duration="6301000" />
-      <workItem from="1712163300955" duration="1036000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1711263783852</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1711263783853</updated>
+      <workItem from="1712163300955" duration="1207000" />
+      <workItem from="1712200712863" duration="881000" />
     </task>
     <task id="LOCAL-00002" summary="Initial commit">
       <option name="closed" value="true" />
@@ -526,7 +514,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712050363190</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Configuring the Add Staffs Page">
+      <option name="closed" value="true" />
+      <created>1712165199920</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1712165199921</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,6 +548,7 @@
     <MESSAGE value="Configuring the backend" />
     <MESSAGE value="Configuring the loading page" />
     <MESSAGE value="Configuring the loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring the loading" />
+    <MESSAGE value="Configuring the Add Staffs Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring the Add Staffs Page" />
   </component>
 </project>
