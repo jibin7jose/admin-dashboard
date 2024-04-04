@@ -18,7 +18,7 @@ export default async function ServicesPage(){
         <div className={styles.container}>
             <div className={styles.top}>
                 <Search placeholder="Search for a service..." />
-                <Link href="/services/add/">
+                <Link href="services/add">
                     <button className={styles.addButton}>Add New Service</button>
                 </Link>
             </div>

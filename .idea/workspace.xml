@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the Add Staffs Page">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the Add Services Page">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/addService/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/addService/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/addService/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/services/add/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/add/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +131,8 @@
       <workItem from="1712148568491" duration="6301000" />
       <workItem from="1712163300955" duration="1207000" />
       <workItem from="1712200712863" duration="881000" />
-    </task>
-    <task id="LOCAL-00002" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1711265518722</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1711265518722</updated>
+      <workItem from="1712212251399" duration="2821000" />
+      <workItem from="1712215083805" duration="673000" />
     </task>
     <task id="LOCAL-00003" summary="Initial commit">
       <option name="closed" value="true" />
@@ -522,7 +518,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712165199921</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Configuring the Add Services Page">
+      <option name="closed" value="true" />
+      <created>1712212432815</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1712212432815</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,6 +553,7 @@
     <MESSAGE value="Configuring the loading page" />
     <MESSAGE value="Configuring the loading" />
     <MESSAGE value="Configuring the Add Staffs Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring the Add Staffs Page" />
+    <MESSAGE value="Configuring the Add Services Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring the Add Services Page" />
   </component>
 </project>

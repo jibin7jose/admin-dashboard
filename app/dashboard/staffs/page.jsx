@@ -1,10 +1,42 @@
+"use client"
 import styles from 'app/ui/dashboard/staffs/staffs.module.css';
 import Search from "@/app/ui/dashboard/search/search";
 import Link from "next/link";
 import Avatar from 'public/noavatar.png';
 import Image from 'next/image';
+import {PrismaClient} from "@prisma/client";
+import {useRouter} from "next/navigation";
 
-const Staffs = () => {
+const prisma = new PrismaClient();
+
+async function getStaffs() {
+    return prisma.staffs.findMany();
+}
+
+const DeleteButton = ({ sid }) => {
+    const router = useRouter();
+    const handleDelete = async () => {
+        // Your deleteStaff logic here
+        return prisma.staffs.delete({
+            where: {
+                staffId: sid,
+            },
+        });
+    };
+    const handleClick = () => {
+        handleDelete();
+        router.push('/'); // Navigate to the desired page after deletion
+    };
+    return (
+        <button className={`${styles.button} ${styles.delete}`} onClick={handleClick}>
+            Delete
+        </button>
+    );
+};
+
+// eslint-disable-next-line @next/next/no-async-client-component
+const Staffs = async () => {
+    const staffs = await getStaffs();
     return (
         <div className={styles.container}>
             <div className={styles.top}>
@@ -26,37 +58,36 @@ const Staffs = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <div className={styles.user}>
-                            <Image
-                                src={Avatar}
-                                alt='avatar'
-                                width={40}
-                                height={40}
-                                className={styles.userImage}
-                            />Joel B Joseph
-                        </div>
-                    </td>
-                    <td>
-                        Manager
-                    </td>
-                    <td>
-                        dhanaraja@gmail.com
-                    </td>
-                    <td>
-                        9999999999
-                    </td>
-                    <td>Paid</td>
-                    <td>
-                        <div className={styles.buttons}>
-                            <Link href='/'>
-                                <button className={`${styles.button} ${styles.view}`}>View</button>
-                            </Link>
-                            <button className={`${styles.button} ${styles.delete}`}>Delete</button>
-                        </div>
-                    </td>
-                </tr>
+                {staffs.map((staff) => (
+                    <tr key={staff.staffId}>
+                        <td>
+                            <div className={styles.user}>
+                                <Image
+                                    src={Avatar}
+                                    alt='avatar'
+                                    width={40}
+                                    height={40}
+                                    className={styles.userImage}
+                                />
+                                {staff.staffName}
+                            </div>
+                        </td>
+                        <td>{staff.staffRole}</td>
+                        <td>{staff.staffEmail}</td>
+                        <td>{staff.staffPhone}</td>
+                        <td>{staff.salary}</td>
+                        <td>
+                            <div className={styles.buttons}>
+                                <Link href='staffs/'>
+                                    <button className={`${styles.button} ${styles.view}`}>View</button>
+                                </Link>
+                                <Link href='staffs/'>
+                                    <DeleteButton staffId={staff.staffId} />
+                                </Link>
+                            </div>
+                        </td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>
