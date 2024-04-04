@@ -34,7 +34,7 @@ const DeleteButton = ({ sid }) => {
     );
 };
 
-// eslint-disable-next-line @next/next/no-async-client-component
+
 const Staffs = async () => {
     const staffs = await getStaffs();
     return (
@@ -81,9 +81,9 @@ const Staffs = async () => {
                                 <Link href='staffs/'>
                                     <button className={`${styles.button} ${styles.view}`}>View</button>
                                 </Link>
-                                <Link href='staffs/'>
-                                    <DeleteButton staffId={staff.staffId} />
-                                </Link>
+                                {/*<Link href='staffs/'>*/}
+                                {/*    <DeleteButton staffId={staff.staffId} />*/}
+                                {/*</Link>*/}
                             </div>
                         </td>
                     </tr>
