@@ -1,50 +1,38 @@
 "use client"
+import { useState, useEffect } from 'react';
 import styles from 'app/ui/dashboard/staffs/staffs.module.css';
-import Search from "@/app/ui/dashboard/search/search";
-import Link from "next/link";
+import Search from '@/app/ui/dashboard/search/search';
+import Link from 'next/link';
 import Avatar from 'public/noavatar.png';
 import Image from 'next/image';
-import {PrismaClient} from "@prisma/client";
-import {useRouter} from "next/navigation";
+import DeleteButton from "@/app/ui/dashboard/staffs/delete";
 
-const prisma = new PrismaClient();
+const Staffs = () => {
+    const [staffs, setStaffs] = useState([]);
 
-async function getStaffs() {
-    return prisma.staffs.findMany();
-}
-
-const DeleteButton = ({ sid }) => {
-    const router = useRouter();
-    const handleDelete = async () => {
-        // Your deleteStaff logic here
-        return prisma.staffs.delete({
-            where: {
-                staffId: sid,
-            },
-        });
-    };
-    const handleClick = () => {
-        handleDelete();
-        router.push('/'); // Navigate to the desired page after deletion
-    };
-    return (
-        <button className={`${styles.button} ${styles.delete}`} onClick={handleClick}>
-            Delete
-        </button>
-    );
-};
-
-
-const Staffs = async () => {
-    const staffs = await getStaffs();
+    useEffect(() => {
+        const fetchStaffs = async () => {
+            try {
+                const response = await fetch('/api/staffs'); // Corrected endpoint
+                if (response.ok) {
+                    const data = await response.json();
+                    setStaffs(data.staffs);
+                } else {
+                    throw new Error('Failed to fetch staffs');
+                }
+            } catch (error) {
+                console.error('Error fetching staffs:', error);
+            }
+        };
+        fetchStaffs();
+    }, []);
     return (
         <div className={styles.container}>
             <div className={styles.top}>
-                <Search placeholder="Search for a staff..."/>
+                <Search placeholder="Search for a staff..." />
                 <Link href="staffs/add/">
                     <button className={styles.addButton}>Add New Staff</button>
                 </Link>
-
             </div>
             <table className={styles.table}>
                 <thead>
@@ -53,7 +41,7 @@ const Staffs = async () => {
                     <td>Role</td>
                     <td>Email</td>
                     <td>Phone No.</td>
-                    <td>Salary Status</td>
+                    <td>Salary</td>
                     <td>Action</td>
                 </tr>
                 </thead>
@@ -62,13 +50,7 @@ const Staffs = async () => {
                     <tr key={staff.staffId}>
                         <td>
                             <div className={styles.user}>
-                                <Image
-                                    src={Avatar}
-                                    alt='avatar'
-                                    width={40}
-                                    height={40}
-                                    className={styles.userImage}
-                                />
+                                <Image src={Avatar} alt="avatar" width={40} height={40} className={styles.userImage} />
                                 {staff.staffName}
                             </div>
                         </td>
@@ -77,14 +59,7 @@ const Staffs = async () => {
                         <td>{staff.staffPhone}</td>
                         <td>{staff.salary}</td>
                         <td>
-                            <div className={styles.buttons}>
-                                <Link href='staffs/'>
-                                    <button className={`${styles.button} ${styles.view}`}>View</button>
-                                </Link>
-                                {/*<Link href='staffs/'>*/}
-                                {/*    <DeleteButton staffId={staff.staffId} />*/}
-                                {/*</Link>*/}
-                            </div>
+                            <DeleteButton staffId={staff.staffId} />
                         </td>
                     </tr>
                 ))}
@@ -92,6 +67,5 @@ const Staffs = async () => {
             </table>
         </div>
     );
-}
-
+};
 export default Staffs;

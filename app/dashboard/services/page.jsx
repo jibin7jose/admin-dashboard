@@ -12,8 +12,9 @@ async function getService() {
     'use server'
     return await prisma.services.findMany();
 }
+const services = await getService();
 export default async function ServicesPage(){
-    const services = await getService();
+
     return (
         <div className={styles.container}>
             <div className={styles.top}>
