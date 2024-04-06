@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the Add Staffs Page">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/actions/createAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/actions/readAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/actions/removeAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/deleteStaff/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/staffs/delete.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/staffs/delete.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +70,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/nabiel/IDEs/WebStorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -133,15 +140,11 @@
       <workItem from="1712215083805" duration="673000" />
       <workItem from="1712226622366" duration="2121000" />
       <workItem from="1712301593501" duration="3559000" />
-      <workItem from="1712326720229" duration="312000" />
-    </task>
-    <task id="LOCAL-00006" summary="Initial commit">
-      <option name="closed" value="true" />
-      <created>1711266046352</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1711266046352</updated>
+      <workItem from="1712326720229" duration="7033000" />
+      <workItem from="1712504404920" duration="967000" />
+      <workItem from="1712419870141" duration="117000" />
+      <workItem from="1712419995935" duration="102000" />
+      <workItem from="1712420107395" duration="903000" />
     </task>
     <task id="LOCAL-00007" summary="Configured Navbar">
       <option name="closed" value="true" />
@@ -527,7 +530,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712305115874</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Configuring the Add Staffs Page">
+      <option name="closed" value="true" />
+      <created>1712327212273</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1712327212273</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,8 +564,8 @@
     <MESSAGE value="Configuring the backend" />
     <MESSAGE value="Configuring the loading page" />
     <MESSAGE value="Configuring the loading" />
-    <MESSAGE value="Configuring the Add Staffs Page" />
     <MESSAGE value="Configuring the Add Services Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring the Add Services Page" />
+    <MESSAGE value="Configuring the Add Staffs Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuring the Add Staffs Page" />
   </component>
 </project>

@@ -1,31 +1,27 @@
 "use client"
-import { useState, useEffect } from 'react';
-import styles from 'app/ui/dashboard/staffs/staffs.module.css';
+import { useState, useEffect } from "react";
+import Image from 'next/image';
 import Search from '@/app/ui/dashboard/search/search';
 import Link from 'next/link';
+import { removeStaff } from '@/app/actions/removeAction';
+import { readStaffs } from '@/app/actions/readAction';
+import styles from 'app/ui/dashboard/staffs/staffs.module.css';
 import Avatar from 'public/noavatar.png';
-import Image from 'next/image';
-import DeleteButton from "@/app/ui/dashboard/staffs/delete";
 
 const Staffs = () => {
     const [staffs, setStaffs] = useState([]);
-
     useEffect(() => {
         const fetchStaffs = async () => {
-            try {
-                const response = await fetch('/api/staffs'); // Corrected endpoint
-                if (response.ok) {
-                    const data = await response.json();
-                    setStaffs(data.staffs);
-                } else {
-                    throw new Error('Failed to fetch staffs');
-                }
-            } catch (error) {
-                console.error('Error fetching staffs:', error);
-            }
+            const staffsData = await readStaffs();
+            setStaffs(staffsData);
         };
         fetchStaffs();
     }, []);
+    const handleRemove = async (staffId) => {
+        await removeStaff(staffId);
+        const updatedStaffs = staffs.filter((staff) => staff.staffId !== staffId);
+        setStaffs(updatedStaffs);
+    };
     return (
         <div className={styles.container}>
             <div className={styles.top}>
@@ -36,36 +32,56 @@ const Staffs = () => {
             </div>
             <table className={styles.table}>
                 <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Role</td>
-                    <td>Email</td>
-                    <td>Phone No.</td>
-                    <td>Salary</td>
-                    <td>Action</td>
-                </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>Role</td>
+                        <td>Email</td>
+                        <td>Phone No.</td>
+                        <td>Salary</td>
+                        <td>Action</td>
+                    </tr>
                 </thead>
                 <tbody>
-                {staffs.map((staff) => (
-                    <tr key={staff.staffId}>
-                        <td>
-                            <div className={styles.user}>
-                                <Image src={Avatar} alt="avatar" width={40} height={40} className={styles.userImage} />
-                                {staff.staffName}
-                            </div>
-                        </td>
-                        <td>{staff.staffRole}</td>
-                        <td>{staff.staffEmail}</td>
-                        <td>{staff.staffPhone}</td>
-                        <td>{staff.salary}</td>
-                        <td>
-                            <DeleteButton staffId={staff.staffId} />
-                        </td>
-                    </tr>
-                ))}
+                    {staffs && staffs.map(({ 
+                        staffId, 
+                        staffName, 
+                        staffRole, 
+                        staffEmail, 
+                        staffPhone, 
+                        salary 
+                    }) => (
+                        <StaffRow
+                            key={staffId}
+                            staffId={staffId}
+                            staffName={staffName}
+                            staffRole={staffRole}
+                            staffEmail={staffEmail}
+                            staffPhone={staffPhone}
+                            salary={salary}
+                            handleRemove={handleRemove}
+                        />
+                    ))}
                 </tbody>
             </table>
         </div>
     );
 };
+const StaffRow = ({ staffId, staffName, staffRole, staffEmail, staffPhone, salary, handleRemove }) => (
+    <tr>
+        <td>
+            <div className={styles.user}>
+                <Image src={Avatar} alt="avatar" width={40} height={40} className={styles.userImage} />
+                {staffName}
+            </div>
+        </td>
+        <td>{staffRole}</td>
+        <td>{staffEmail}</td>
+        <td>{staffPhone}</td>
+        <td>{salary}</td>
+        <td>
+            <button className={`${styles.button} ${styles.delete}`} onClick={() => handleRemove(staffId)}>Delete</button>
+        </td>
+    </tr>
+);
+
 export default Staffs;
