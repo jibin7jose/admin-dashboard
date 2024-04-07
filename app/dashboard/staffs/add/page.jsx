@@ -3,14 +3,6 @@ import styles from '../../../ui/dashboard/staffs/addStaff/add.module.css'
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 const AddStaff = () => {
-    /*
-          staffName  String
-          staffRole  String
-          createdAt  DateTime @default(now())
-          staffEmail String
-          staffPhone String
-          salary     Integer
-    */
     const [staffName, setStaffName] = useState('');
     const [staffEmail, setStaffEmail] = useState('');
     const [staffPhone, setStaffPhone] = useState('');

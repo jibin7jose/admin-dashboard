@@ -1,12 +1,12 @@
 "use server"
 
 import { PrismaClient } from "@prisma/client"
-
-const prisma = new PrismaClient();
+import { withAccelerate } from '@prisma/extension-accelerate'
+const prisma = new PrismaClient().$extends(withAccelerate());
 
 export const readStaffs = async () => {
     try {
-        const staffData = await prisma.staffs.findMany();
+        const staffData = await prisma.staffs.findMany({cacheStrategy: { ttl: 20 }});
         return staffData;
     } catch (error) {
         return error;
@@ -15,7 +15,7 @@ export const readStaffs = async () => {
 
 export const readServices = async () => {
     try {
-        const serviceData = await prisma.services.findMany();
+        const serviceData = await prisma.services.findMany({cacheStrategy: { ttl: 20 },});
         return serviceData;
     } catch (error) {
         return error;

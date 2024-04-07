@@ -2,7 +2,7 @@ const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
 const { PrismaClient } = require('@prisma/client');
-
+import { withAccelerate } from '@prisma/extension-accelerate'
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();

@@ -1,0 +1,170 @@
+.container {
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .form input,
+    .form select,
+    .form button {
+        width: 100%;
+    }
+}
+
+.container {
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form input,
+.form select,
+.form button {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form button {
+    width: 10vw;
+}
+
+.tokenContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tokenContainer button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: springgreen;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tokenContainer button:hover {
+    background-color: green;
+}
+
+/* Optional: Style for links and "Mark as Complete" button */
+.linkContainer {
+    margin-top: 20px;
+}
+
+.linkContainer a {
+    display: block;
+    margin-bottom: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.linkContainer button {
+    padding: 10px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.linkContainer button:hover {
+    background-color: blue;
+}
+.button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 300ms ease-in;
+}
+.button:hover {
+    background-color: darkred;
+
+}
+
+/*
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form input,
+.form select,
+.form button {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: calc(45% - 10px);
+}
+
+.form select {
+    width: 100%;
+}
+
+.tokenContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tokenContainer button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: springgreen;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tokenContainer button:hover {
+    background-color: green;
+}
+
+.linkContainer {
+    margin-top: 20px;
+}
+
+.linkContainer a {
+    display: block;
+    margin-bottom: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.linkContainer button {
+    padding: 10px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.linkContainer button:hover {
+    background-color: blue;
+} */
+

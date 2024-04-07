@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev && prisma generate --no-engine",
+    "build": "next build && prisma generate --no-engine",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "14.0.1",
-    "@prisma/client": "^5.11.0",
+    "@prisma/client": "^5.12.1",
+    "@prisma/extension-accelerate": "^1.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@vercel/postgres": "^0.7.2",
     "axios": "^1.6.8",

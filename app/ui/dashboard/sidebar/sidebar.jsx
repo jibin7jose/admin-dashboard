@@ -9,7 +9,7 @@ import {
 } from "react-icons/md";
 import MenuLink from "@/app/ui/dashboard/sidebar/menuLink/menuLink";
 import Image from "next/image";
-
+import Link from 'next/link'
 const menuItems = [
     {
         title: "Pages",
@@ -20,7 +20,7 @@ const menuItems = [
                 icon: <MdDashboard />
             },
             {
-                title: "Outsource",
+                title: "Queue Manager",
                 path: "/dashboard/outsource",
                 icon: <MdSupervisedUserCircle />
             },
@@ -30,7 +30,7 @@ const menuItems = [
                 icon: <MdMiscellaneousServices />
             },
             {
-                title: "Transactions",
+                title: "My Transactions",
                 path: "/dashboard/transactions",
                 icon: <MdAttachMoney />
             },
@@ -70,7 +70,9 @@ const Sidebar = () => {
                 </div>
             </div>
             <div>
-                <button className={styles.newTransaction}>+ New Transaction</button>
+                <Link href="/dashboard/newTransaction">
+                    <button className={styles.newTransaction}>+ New Transaction</button>
+                </Link>
             </div>
             <ul className={styles.list}>
                 {menuItems.map(category => (

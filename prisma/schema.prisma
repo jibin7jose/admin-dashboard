@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  url       = env("DATABASE_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
@@ -30,4 +30,26 @@ model staffs {
   staffEmail String
   staffPhone String
   salary     Int
+}
+model tokens {
+  tokenId      Int      @id @default(autoincrement())
+  tokenDate    DateTime @default(now())
+  customerName String
+  assignedTo  Int
+    @relation(fields: [assignedTo], references: [staffId])
+    staffs   staffs @relation(fields: [assignedTo], references: [staffId])
+
+}
+
+
+model transactions {
+  transactionId  Int     @id @default(autoincrement())
+  transactionTime DateTime   @default(now())
+  transactionStatus  String
+  serviceId Int
+    @relation(fields: [serviceId], references: [serviceId])
+    services   services @relation(fields: [serviceId], references: [serviceId])
+  servedBy Int
+    @relation(fields: [staffId], references: [staffId])
+    staffs   staffs @relation(fields: [staffId], references: [staffId])
 }

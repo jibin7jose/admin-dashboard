@@ -1,15 +1,16 @@
 "use server"
 
 import { PrismaClient } from "@prisma/client"
-
-const prisma = new PrismaClient();
+import { withAccelerate } from '@prisma/extension-accelerate'
+const prisma = new PrismaClient().$extends(withAccelerate());
 
 export const removeStaff = async (id) => {
     try {
         const staffRemoved = await prisma.staffs.delete({
             where: {
                 staffId: id
-            }
+            },
+            cacheStrategy: { ttl: 20 },
         });
         return staffRemoved;
     } catch (error) {
@@ -22,7 +23,8 @@ export const removeService = async (id) => {
         const serviceRemoved = await prisma.services.delete({
             where: {
                 serviceId: id
-            }
+            },
+            cacheStrategy: { ttl: 20 },
         });
         return serviceRemoved;
     } catch (error) {
