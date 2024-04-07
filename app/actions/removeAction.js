@@ -31,3 +31,17 @@ export const removeService = async (id) => {
         return error;
     }
 }
+
+export const removeToken = async (id) => {
+    try {
+        const tokenRemoved = await prisma.tokens.delete({
+            where: {
+                tokenId: id
+            },
+            cacheStrategy: { ttl: 20 },
+        });
+        return tokenRemoved;
+    } catch (error) {
+        return error;
+    }
+}

@@ -30,26 +30,22 @@ model staffs {
   staffEmail String
   staffPhone String
   salary     Int
+  tokens     tokens[]
 }
+
 model tokens {
-  tokenId      Int      @id @default(autoincrement())
-  tokenDate    DateTime @default(now())
+  tokenId      Int            @id @default(autoincrement())
+  tokenDate    DateTime       @default(now())
   customerName String
-  assignedTo  Int
-    @relation(fields: [assignedTo], references: [staffId])
-    staffs   staffs @relation(fields: [assignedTo], references: [staffId])
-
+  staff        staffs         @relation(fields: [assignedTo], references: [staffId])
+  assignedTo   Int            @unique
+  transactions transactions[]
 }
-
 
 model transactions {
-  transactionId  Int     @id @default(autoincrement())
-  transactionTime DateTime   @default(now())
-  transactionStatus  String
-  serviceId Int
-    @relation(fields: [serviceId], references: [serviceId])
-    services   services @relation(fields: [serviceId], references: [serviceId])
-  servedBy Int
-    @relation(fields: [staffId], references: [staffId])
-    staffs   staffs @relation(fields: [staffId], references: [staffId])
+  transactionId     Int      @id @default(autoincrement())
+  transactionTime   DateTime @default(now())
+  transactionStatus String
+  token             tokens   @relation(fields: [servedBy], references: [assignedTo])
+  servedBy          Int
 }

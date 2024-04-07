@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "14.0.1",
-    "@prisma/client": "^5.12.1",
+    "@prisma/client": "^5.13.0-dev.17",
     "@prisma/extension-accelerate": "^1.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@vercel/postgres": "^0.7.2",
@@ -19,7 +19,7 @@
     "clsx": "^2.1.0",
     "lucide-react": "^0.363.0",
     "next": "14.0.1",
-    "prisma": "^5.11.0",
+    "prisma": "^5.13.0-dev.17",
     "react": "18",
     "react-dom": "18",
     "react-icons": "^4.11.0",

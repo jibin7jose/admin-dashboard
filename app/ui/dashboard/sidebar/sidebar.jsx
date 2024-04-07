@@ -49,11 +49,11 @@ const menuItems = [
                 path: "/dashboard/staffs",
                 icon: <MdPeople />
             },
-            {
-                title: "Profits",
-                path: "/dashboard/transactions",
-                icon: <MdAttachMoney />
-            },
+            // {
+            //     title: "Profits",
+            //     path: "/dashboard/transactions",
+            //     icon: <MdAttachMoney />
+            // },
         ],
     },
 ]
