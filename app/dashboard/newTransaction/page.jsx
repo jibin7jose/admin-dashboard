@@ -1,9 +1,12 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import styles from 'app/ui/dashboard/newTransaction/newTransaction.module.css';
-import { readStaffs, readServices, readServiceLink } from "@/app/actions/readAction";
+import { readStaffs, readServices, readSelectedService } from "@/app/actions/readAction";
+import { useRouter } from 'next/navigation';
+
 
 const NewTransaction = () => {
+    const router = new useRouter();
     const [customerName, setCustomerName] = useState('');
     const [selectedStaff, setSelectedStaff] = useState('');
     const [selectedService, setSelectedService] = useState('');
@@ -11,16 +14,22 @@ const NewTransaction = () => {
     const [serviceLink, setServiceLink] = useState('');
     const [showLinks, setShowLinks] = useState(false);
     const [staffs, setStaffs] = useState([]);
-    const [services, setServices] = useState([]);
+    const [services, setServices] = useState({});
     const [transactionStatus, setTransactionStatus] = useState('Pending');
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const staffData = await readStaffs();
                 const serviceData = await readServices();
                 setStaffs(staffData);
-                setServices(serviceData);
+            
+                let servicesHashMap = {};
+                serviceData.forEach((service) => {
+                    servicesHashMap[service.serviceId] = service.serviceName;
+                });
+
+                setServices(servicesHashMap);
+
             } catch (error) {
                 console.error(error);
             }
@@ -28,10 +37,11 @@ const NewTransaction = () => {
         fetchData();
     }, []);
 
-    const fetchServiceLink = async (selectedService) => {
+    const fetchServiceLink = async () => {
         try {
-            const serviceLink = await readServiceLink(selectedService);
-            setServiceLink(serviceLink.toString());
+            const serviceData = await readSelectedService(selectedService);
+            console.log('Service Data:', serviceData); // Log the data returned by readSelectedService
+            setServiceLink(serviceData.serviceLink);
         } catch (error) {
             console.error(error);
         }
@@ -39,13 +49,15 @@ const NewTransaction = () => {
 
     useEffect(() => {
         if (selectedService) {
-            fetchServiceLink(selectedService);
+            fetchServiceLink();
         }
     }, [selectedService]);
 
-    const handleServiceSelection = (event) => {
-        setShowLinks(true);
-        setSelectedService(event.target.value);
+    const handleServiceSelection = async (event) => {
+        // setShowLinks(true);
+        const selectedServiceId = event.target.value;
+        setSelectedService(selectedServiceId);
+        await fetchServiceLink(selectedServiceId);
     };
 
     const handleCustomerNameChange = (event) => {
@@ -58,7 +70,6 @@ const NewTransaction = () => {
 
     const handleAssignToSelf = () => {
         setSelectedStaff('Self');
-        fetchServiceLink(selectedService);
         setSelfAssigned(true);
     };
 
@@ -79,10 +90,34 @@ const NewTransaction = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            // Your logic for handling the transaction
+            // Push Token to the database
+            await fetch('../../api/token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    customerName: customerName,
+                    assignedTo: selectedStaff
+                })
+            });
+    
+            // Push Transaction to the database
+            await fetch('../../api/transaction', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    transactionStatus: transactionStatus,
+                    serviceId: selectedService,
+                    servedBy: selectedStaff
+                })
+            });
+            router.refresh();
         } catch (error) {
             console.error(error);
-        }
+        }      
         setCustomerName('');
         setSelectedStaff('');
     };
@@ -114,22 +149,28 @@ const NewTransaction = () => {
                 {selfAssigned && (
                     <>
                         <select value={selectedService} onChange={handleServiceSelection} required>
-                            <option value="">Select Service</option>
-                            {services.map((service) => (
-                                <option key={service.serviceName} value={service.serviceName}>
-                                    {service.serviceName}
+                        <option value="">Select Service</option>
+                            {Object.entries(services).map(([serviceId, serviceName]) => (
+                                <option key={serviceId} value={serviceId}>
+                                    {serviceName}
                                 </option>
                             ))}
                         </select>
-                        <a href={serviceLink} target="_blank" rel="noopener noreferrer">
-                            Go to Service link
-                        </a>
-                        <button className={styles.button} type="button" onClick={handleMarkAsComplete}>
-                            Mark as Complete
-                        </button>
-                        <button className={styles.button} type="button" onClick={handleTransactionFailure}>
-                            Mark as Failed
-                        </button>
+                        <div className={styles.bottomContainer}>
+                            <a href={serviceLink} target="_blank" rel="noopener noreferrer">
+                                Go to Service link
+                            </a>
+                            <div className={styles.buttonSet}>
+                                <button className={styles.button} type="submit" onClick={handleMarkAsComplete}>
+                                    Mark as Complete
+                                </button>
+                                <button className={styles.button} type="submit" onClick={handleTransactionFailure}>
+                                    Mark as Failed
+                                </button>
+                            </div>
+                            
+                        </div>
+                        
                     </>
                 )}
                 {selectedStaff !== 'Self' && (

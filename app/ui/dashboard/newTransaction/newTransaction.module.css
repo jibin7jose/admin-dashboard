@@ -22,42 +22,30 @@
 .form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
 }
 
 .form input,
-.form select,
-.form button {
+.form select{
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 10px;
     width: 100%;
+    gap: 10px;
+    background-color: var(--bgSoft);
+    color: white;
+    border: 1px solid grey;
 }
 
 .form button {
-    width: 10vw;
-}
-
-.tokenContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.tokenContainer button {
     padding: 10px;
     border-radius: 5px;
-    background-color: springgreen;
-    border: none;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    margin: 10px;
+    width: 100px;
 }
 
-.tokenContainer button:hover {
-    background-color: green;
-}
 
 /* Optional: Style for links and "Mark as Complete" button */
 .linkContainer {
@@ -95,76 +83,22 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 300ms ease-in;
+    transition: red 0.3s ease-in-out;
 }
 .button:hover {
     background-color: darkred;
 
 }
-
-/*
-
-.form {
+.bottomContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.form input,
-.form select,
-.form button {
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: calc(45% - 10px);
-}
-
-.form select {
-    width: 100%;
-}
-
-.tokenContainer {
-    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
 }
-
-.tokenContainer button {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: springgreen;
-    border: none;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+.buttonSet{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
 }
-
-.tokenContainer button:hover {
-    background-color: green;
-}
-
-.linkContainer {
-    margin-top: 20px;
-}
-
-.linkContainer a {
-    display: block;
-    margin-bottom: 10px;
-    color: blue;
-    text-decoration: underline;
-}
-
-.linkContainer button {
-    padding: 10px;
-    background-color: lightblue;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.linkContainer button:hover {
-    background-color: blue;
-} */
-
