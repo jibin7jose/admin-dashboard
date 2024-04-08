@@ -11,25 +11,25 @@ export const createToken = async (data) => {
         }, 
         {
             cacheStrategy: { 
-                ttl: 20 
+                ttl: 10 
             }
         });
         await prisma.transactions.create({
-            data
+            data: {
+                transactionTime: new Date(),
+                transactionStatus: 'Pending',
+                servedBy: data.assignedTo,
+                tokenID: token.tokenId
+            }
         }, 
         {
             cacheStrategy: { 
-                ttl: 20 
+                ttl: 10 
             }
         });
-        console.log("Token logged successfully");
+        console.log("Token and Transaction logged successfully");
         return token;
     } catch (error) {
         return error;
     }
 };
-
-
-
-
-// cacheStrategy: { ttl: 20 }

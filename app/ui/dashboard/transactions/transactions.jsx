@@ -1,6 +1,7 @@
 import styles from './transactions.module.css'
 import Image from 'next/image'
 const Transactions = () => {
+    //  fetch only the last 3 transactions
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Recent Transactions</h2>

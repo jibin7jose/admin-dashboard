@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the New Transactions Page" />
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the New Transactions Page">
+      <change afterPath="$PROJECT_DIR$/app/dashboard/myTransactions/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/transactions/page.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,14 +141,7 @@
       <workItem from="1712419995935" duration="102000" />
       <workItem from="1712420107395" duration="1525000" />
       <workItem from="1712470879535" duration="15657000" />
-    </task>
-    <task id="LOCAL-00012" summary="Configured Sidebar">
-      <option name="closed" value="true" />
-      <created>1711281737669</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1711281737669</updated>
+      <workItem from="1712576306746" duration="615000" />
     </task>
     <task id="LOCAL-00013" summary="Configuring Cards and Rightbar">
       <option name="closed" value="true" />
@@ -528,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712524841156</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Configuring the New Transactions Page">
+      <option name="closed" value="true" />
+      <created>1712576322594</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1712576322595</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,13 +1,15 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { readStaffs, readServices, readSelectedService } from '@/app/actions/readAction'; 
+
+import { readStaffs, readServices, readSelectedService } from '@/app/actions/readAction';
 import { createToken } from '@/app/actions/createAction';
-import router from 'next/router';
-import styles from '@/app/ui/dashboard/newTransaction/newTransaction.module.css'; 
+
+import styles from '@/app/ui/dashboard/newTransaction/newTransaction.module.css';
 
 const NewTransaction = () => {
+    
     const [customerName, setCustomerName] = useState('');
-    let [selectedStaff, setSelectedStaff] = useState('');
+    const [selectedStaff, setSelectedStaff] = useState('');
     const [selectedService, setSelectedService] = useState('');
     const [selfAssigned, setSelfAssigned] = useState(false);
     const [serviceLink, setServiceLink] = useState('');
@@ -31,25 +33,25 @@ const NewTransaction = () => {
         fetchData();
     }, []);
 
-    const fetchServiceLink = async () => {
-        try {
-            const serviceData = await readSelectedService(selectedService);
-            setServiceLink(serviceData.serviceLink);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
     useEffect(() => {
+        const fetchServiceLink = async () => {
+            try {
+                const serviceData = await readSelectedService(selectedService);
+                setServiceLink(serviceData.serviceLink);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
         if (selectedService) {
             fetchServiceLink();
         }
     }, [selectedService]);
 
-    const handleServiceSelection = async (event) => {
+
+    const handleServiceSelection = (event) => {
         const selectedServiceId = event.target.value;
         setSelectedService(selectedServiceId);
-        await fetchServiceLink(selectedServiceId);
     };
 
     const handleCustomerNameChange = (event) => {
@@ -75,19 +77,18 @@ const NewTransaction = () => {
         setTransactionStatus('Completed');
     };
 
-    const handleSubmit = async (event) => {  
+    const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             let servedBy = parseInt(selectedStaff);
-    
+
             const tokenData = {
                 customerName,
                 servedBy
             };
-    
-            // Create a token
+
             const token = await createToken(tokenData);
-    
+
             console.log('Token created:', token);
 
             setCustomerName('');
@@ -95,12 +96,9 @@ const NewTransaction = () => {
             setSelectedService('');
             setTransactionStatus('Pending');
         } catch (error) {
-            // Handle errors (e.g., show an error message)
             console.error('Error:', error.message);
         }
     };
-    
-    
 
     return (
         <div className={styles.container}>

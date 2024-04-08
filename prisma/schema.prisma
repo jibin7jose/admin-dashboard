@@ -1,6 +1,5 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
@@ -14,15 +13,6 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model services {
-  serviceId     Int            @id @default(autoincrement())
-  serviceName   String
-  serviceCost   Int
-  serviceProfit Int
-  serviceLink   String
-  transactions  transactions[]
-}
-
 model staffs {
   staffId    Int      @id @default(autoincrement())
   staffName  String
@@ -31,24 +21,34 @@ model staffs {
   staffEmail String
   staffPhone String
   salary     Int
-  tokens     tokens[]
+  tokens     tokens[] // One-to-many relationship: one staff can have multiple tokens
 }
 
 model tokens {
   tokenId      Int            @id @default(autoincrement())
   tokenDate    DateTime       @default(now())
   customerName String
-  staff        staffs         @relation(fields: [assignedTo], references: [staffId])
   assignedTo   Int            @unique
-  transactions transactions[]
+  staff        staffs         @relation(fields: [assignedTo], references: [staffId])
+  transaction  transactions[] // One-to-many relationship: one token can have multiple transactions
+}
+
+model services {
+  serviceId     Int            @id @default(autoincrement())
+  serviceName   String
+  serviceCost   Int
+  serviceProfit Int
+  serviceLink   String
+  transaction   transactions[] // One-to-many relationship: one service can have multiple transactions
 }
 
 model transactions {
   transactionId     Int       @id @default(autoincrement())
   transactionTime   DateTime  @default(now())
   transactionStatus String
-  token             tokens    @relation(fields: [servedBy], references: [assignedTo])
   servedBy          Int
-  service           services? @relation(fields: [serviceID], references: [serviceId])
   serviceID         Int?
+  tokenID           Int
+  service           services? @relation(fields: [serviceID], references: [serviceId])
+  token             tokens    @relation(fields: [servedBy], references: [assignedTo])
 }

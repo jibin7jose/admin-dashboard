@@ -1,78 +1,66 @@
+
 "use server"
 
 import { PrismaClient } from "@prisma/client"
 import { withAccelerate } from '@prisma/extension-accelerate'
-
 const prisma = new PrismaClient().$extends(withAccelerate());
 
-
-export const updateStaff = async( params ) => {
+export const updateToken = async (tokenId, data) => {
     try {
-        const staffData = await prisma.staffs.update({
-            where: { staffId: params.staffId },
-            data: {
-                staffName: params.staffName,
-                staffRole: params.staffRole,
-                staffEmail: params.staffEmail,
-                staffPhone: params.staffPhone,
-                salary: params.salary
-            }
+        const updatedToken = await prisma.tokens.update({
+            where: {
+                tokenId: tokenId
+            },
+            data
         });
-        
-        return staffData;
-    } catch (error) {     
+        console.log("Token updated successfully");
+        return updatedToken;
+    } catch (error) {
         return error;
     }
-}
+};
 
-export const updateService = async( params ) => {
+export const updateTransaction = async (transactionId, data) => {
     try {
-        const staffData = await prisma.services.update({
-            where: { serviceId: params.serviceId },
-            data: {
-                serviceName: params.serviceName,
-                serviceCost: params.serviceCost,
-                serviceProfit: params.serviceProfit,
-                serviceLink: params.serviceLink
-            }
+        const updatedTransaction = await prisma.transactions.update({
+            where: {
+                transactionId: transactionId
+            },
+            data
         });
-        
-        return serviceData;
-    } catch (error) {     
+        console.log("Transaction updated successfully");
+        return updatedTransaction;
+    } catch (error) {
         return error;
     }
-}
+};
 
-export const updateTransaction = async( params ) => {
+export const updateService = async (serviceId, data) => {
     try {
-        const transactionData = await prisma.transactions.update({
-            where: { transactionId: params.transactionId },
-            data: {
-                transactionStatus: params.transactionStatus,
-                servedBy: params.servedBy,
-                serviceID: params.serviceID
-
-            }
+        const updatedService = await prisma.services.update({
+            where: {
+                serviceId: serviceId
+            },
+            data
         });
-        
-        return transactionData;
-    } catch (error) {     
+        console.log("Service updated successfully");
+        return updatedService;
+    } catch (error) {
         return error;
     }
-}
+};
 
-export const updateToken = async( params ) => {
+export const updateStaff = async (staffId, data) => {
     try {
-        const tokenData = await prisma.tokens.update({
-            where: { tokenId: params.tokenId },
-            data: {
-                customerName: params.customerName,
-                assignedTo: params.assignedTo
-            }
+        const updatedStaff = await prisma.staffs.update({
+            where: {
+                staffId: staffId
+            },
+            data
         });
-        
-        return tokenData;
-    } catch (error) {     
+        console.log("Staff updated successfully");
+        return updatedStaff;
+    } catch (error) {
         return error;
     }
-}
+};
