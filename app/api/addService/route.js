@@ -1,7 +1,9 @@
 import {NextResponse} from "next/server";
 import { withAccelerate } from '@prisma/extension-accelerate'
+
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient().$extends(withAccelerate());;
+const prisma = new PrismaClient().$extends(withAccelerate());
+
 export async function POST(request) {
     const res = await request.json();
     let {serviceName, serviceCost, serviceProfit, serviceLink} = res;

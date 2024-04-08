@@ -15,11 +15,12 @@ datasource db {
 }
 
 model services {
-  serviceId     Int    @id @default(autoincrement())
+  serviceId     Int            @id @default(autoincrement())
   serviceName   String
   serviceCost   Int
   serviceProfit Int
   serviceLink   String
+  transactions  transactions[]
 }
 
 model staffs {
@@ -43,9 +44,11 @@ model tokens {
 }
 
 model transactions {
-  transactionId     Int      @id @default(autoincrement())
-  transactionTime   DateTime @default(now())
+  transactionId     Int       @id @default(autoincrement())
+  transactionTime   DateTime  @default(now())
   transactionStatus String
-  token             tokens   @relation(fields: [servedBy], references: [assignedTo])
+  token             tokens    @relation(fields: [servedBy], references: [assignedTo])
   servedBy          Int
+  service           services? @relation(fields: [serviceID], references: [serviceId])
+  serviceID         Int?
 }

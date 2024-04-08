@@ -1,35 +1,29 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import styles from 'app/ui/dashboard/newTransaction/newTransaction.module.css';
-import { readStaffs, readServices, readSelectedService } from "@/app/actions/readAction";
-import { useRouter } from 'next/navigation';
-
+import { readStaffs, readServices, readSelectedService } from '@/app/actions/readAction'; 
+import { createToken } from '@/app/actions/createAction';
+import router from 'next/router';
+import styles from '@/app/ui/dashboard/newTransaction/newTransaction.module.css'; 
 
 const NewTransaction = () => {
-    const router = new useRouter();
     const [customerName, setCustomerName] = useState('');
-    const [selectedStaff, setSelectedStaff] = useState('');
+    let [selectedStaff, setSelectedStaff] = useState('');
     const [selectedService, setSelectedService] = useState('');
     const [selfAssigned, setSelfAssigned] = useState(false);
     const [serviceLink, setServiceLink] = useState('');
     const [showLinks, setShowLinks] = useState(false);
     const [staffs, setStaffs] = useState([]);
-    const [services, setServices] = useState({});
+    const [services, setServices] = useState([]);
     const [transactionStatus, setTransactionStatus] = useState('Pending');
+
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const staffData = await readStaffs();
-                const serviceData = await readServices();
                 setStaffs(staffData);
-            
-                let servicesHashMap = {};
-                serviceData.forEach((service) => {
-                    servicesHashMap[service.serviceId] = service.serviceName;
-                });
 
-                setServices(servicesHashMap);
-
+                const serviceData = await readServices();
+                setServices(serviceData);
             } catch (error) {
                 console.error(error);
             }
@@ -40,7 +34,6 @@ const NewTransaction = () => {
     const fetchServiceLink = async () => {
         try {
             const serviceData = await readSelectedService(selectedService);
-            console.log('Service Data:', serviceData); // Log the data returned by readSelectedService
             setServiceLink(serviceData.serviceLink);
         } catch (error) {
             console.error(error);
@@ -54,7 +47,6 @@ const NewTransaction = () => {
     }, [selectedService]);
 
     const handleServiceSelection = async (event) => {
-        // setShowLinks(true);
         const selectedServiceId = event.target.value;
         setSelectedService(selectedServiceId);
         await fetchServiceLink(selectedServiceId);
@@ -73,54 +65,42 @@ const NewTransaction = () => {
         setSelfAssigned(true);
     };
 
-    const handleTransactionFailure = () => {
-        console.log('Marking transaction as discarded...');
-        setSelfAssigned(false);
-        setShowLinks(false);
+    const handleMarkAsFailed = () => {
+        console.log('Marking transaction as failed...');
         setTransactionStatus('Failed');
     };
 
     const handleMarkAsComplete = () => {
         console.log('Marking transaction as complete...');
-        setSelfAssigned(false);
-        setShowLinks(false);
         setTransactionStatus('Completed');
     };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {  
         event.preventDefault();
         try {
-            // Push Token to the database
-            await fetch('../../api/token', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    customerName: customerName,
-                    assignedTo: selectedStaff
-                })
-            });
+            let servedBy = parseInt(selectedStaff);
     
-            // Push Transaction to the database
-            await fetch('../../api/transaction', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    transactionStatus: transactionStatus,
-                    serviceId: selectedService,
-                    servedBy: selectedStaff
-                })
-            });
-            router.refresh();
+            const tokenData = {
+                customerName,
+                servedBy
+            };
+    
+            // Create a token
+            const token = await createToken(tokenData);
+    
+            console.log('Token created:', token);
+
+            setCustomerName('');
+            setSelectedStaff('');
+            setSelectedService('');
+            setTransactionStatus('Pending');
         } catch (error) {
-            console.error(error);
-        }      
-        setCustomerName('');
-        setSelectedStaff('');
+            // Handle errors (e.g., show an error message)
+            console.error('Error:', error.message);
+        }
     };
+    
+    
 
     return (
         <div className={styles.container}>
@@ -135,7 +115,7 @@ const NewTransaction = () => {
                 <select value={selectedStaff} onChange={handleStaffSelection} required>
                     <option value="">Select Staff</option>
                     {staffs.map((staff) => (
-                        <option key={staff.staffName} value={staff.staffName}>
+                        <option key={staff.staffId} value={staff.staffId}>
                             {staff.staffName}
                         </option>
                     ))}
@@ -149,10 +129,10 @@ const NewTransaction = () => {
                 {selfAssigned && (
                     <>
                         <select value={selectedService} onChange={handleServiceSelection} required>
-                        <option value="">Select Service</option>
-                            {Object.entries(services).map(([serviceId, serviceName]) => (
-                                <option key={serviceId} value={serviceId}>
-                                    {serviceName}
+                            <option value="">Select Service</option>
+                            {services.map((service) => (
+                                <option key={service.serviceId} value={service.serviceId}>
+                                    {service.serviceName}
                                 </option>
                             ))}
                         </select>
@@ -161,16 +141,17 @@ const NewTransaction = () => {
                                 Go to Service link
                             </a>
                             <div className={styles.buttonSet}>
-                                <button className={styles.button} type="submit" onClick={handleMarkAsComplete}>
+                                <button className={styles.button} type="button" onClick={handleMarkAsComplete}>
                                     Mark as Complete
                                 </button>
-                                <button className={styles.button} type="submit" onClick={handleTransactionFailure}>
+                                <button className={styles.button} type="button" onClick={handleMarkAsFailed}>
                                     Mark as Failed
                                 </button>
                             </div>
-                            
+                            <button className={`${styles.button} ${styles.submit}`} type="submit">
+                                Complete Transaction
+                            </button>
                         </div>
-                        
                     </>
                 )}
                 {selectedStaff !== 'Self' && (

@@ -89,6 +89,13 @@
     background-color: darkred;
 
 }
+.submit {
+    background-color: green;
+    color: white;
+}
+.submit:hover {
+    background-color: darkgreen;
+}
 .bottomContainer {
     display: flex;
     flex-direction: column;

@@ -35,11 +35,11 @@ export const readSelectedService = async (currentService) => {
     }
 };
 
-export const readServiceId = async () => {
+export const readServiceId = async (serviceName) => {
     try {
         const service = await prisma.services.findUnique({
             select: {
-                serviceId: true // Select the serviceId field from the database
+                serviceId: true 
             },
             where: {
                 serviceName: serviceName

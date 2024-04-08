@@ -15,7 +15,6 @@ export async function POST(request) {
                 servedBy
             }
         });
-
         return NextResponse.json({ memo });
     } catch (error) {
         console.error('Error creating transaction:', error);
