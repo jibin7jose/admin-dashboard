@@ -21,7 +21,7 @@ const menuItems = [
             },
             {
                 title: "Queue Manager",
-                path: "/dashboard/outsource",
+                path: "/dashboard/queueManager",
                 icon: <MdSupervisedUserCircle />
             },
             {

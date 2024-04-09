@@ -8,9 +8,9 @@ function Dashboard() {
         <div className={styles.wrapper}>
             <div className={styles.main}>
                 <div className={styles.cards}>
-                    <Card />
-                    <Card />
-                    <Card />
+                    <Card title="Daily"/>
+                    <Card title="Weekly"/>
+                    <Card title="Monthly"/>
                 </div>
                 <Transactions />
                 <Chart />

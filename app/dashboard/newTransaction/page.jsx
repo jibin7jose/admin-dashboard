@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from 'react';
 
 import { readStaffs, readServices, readSelectedService } from '@/app/actions/readAction';
-import { createToken } from '@/app/actions/createAction';
+import { createToken, createTransaction } from '@/app/actions/createAction';
 
 import styles from '@/app/ui/dashboard/newTransaction/newTransaction.module.css';
 
 const NewTransaction = () => {
     
     const [customerName, setCustomerName] = useState('');
-    const [selectedStaff, setSelectedStaff] = useState('');
+    const [selectedStaff, setSelectedStaff] = useState(0);
     const [selectedService, setSelectedService] = useState('');
     const [selfAssigned, setSelfAssigned] = useState(false);
     const [serviceLink, setServiceLink] = useState('');
@@ -80,21 +80,23 @@ const NewTransaction = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            let servedBy = parseInt(selectedStaff);
+            const assignedTo = parseInt(selectedStaff);
+            
+            const tokenID = await createToken(customerName, assignedTo);
+            console.log('Token created: ', tokenID);
 
-            const tokenData = {
-                customerName,
-                servedBy
-            };
+            // const selectedService = 1;
+            const transactionStatus = 'Pending';
+            const servedBy = assignedTo;
 
-            const token = await createToken(tokenData);
-
-            console.log('Token created:', token);
-
+            const transactionID = await createTransaction(transactionStatus, servedBy, tokenID);
+            console.log('Transaction created: ', transactionID);
             setCustomerName('');
             setSelectedStaff('');
             setSelectedService('');
             setTransactionStatus('Pending');
+            setShowLinks(false);
+            
         } catch (error) {
             console.error('Error:', error.message);
         }
@@ -124,7 +126,7 @@ const NewTransaction = () => {
                         Self Assign
                     </button>
                 )}
-                {selfAssigned && (
+                {!showLinks && selfAssigned && (
                     <>
                         <select value={selectedService} onChange={handleServiceSelection} required>
                             <option value="">Select Service</option>
@@ -153,7 +155,7 @@ const NewTransaction = () => {
                     </>
                 )}
                 {selectedStaff !== 'Self' && (
-                    <button className={styles.button} type="submit">Assign to {selectedStaff}</button>
+                    <button className={styles.button} type="submit">Assign to Staff {selectedStaff}</button>
                 )}
             </form>
         </div>

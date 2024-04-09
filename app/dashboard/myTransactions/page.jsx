@@ -4,6 +4,7 @@ import Search from '@/app/ui/dashboard/search/search';
 const MyTransactions = () => {
     return (
         <div className={styles.container}>
+            <p>Under Development - Awaiting Authentication</p>&nbsp;
             <div className={styles.top}>
                 <Search placeholder="Search for a customer..." />
             </div>

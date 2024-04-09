@@ -51,4 +51,22 @@ export const readServiceId = async (serviceName) => {
     }
 };
 
+export const readRecentTransactions = async (staffId) => {
+    try {
+        const transactions = await prisma.transactions.findMany({
+            where: {
+                servedBy: staffId
+            },
+            orderBy: {
+                transactionId: 'desc'
+            },
+            take: 3
+        });
+
+        return transactions;
+    } catch (error) {
+        return error;
+    }
+}
+
 

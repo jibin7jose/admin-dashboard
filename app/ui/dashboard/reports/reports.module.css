@@ -1,0 +1,6 @@
+.container {
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}

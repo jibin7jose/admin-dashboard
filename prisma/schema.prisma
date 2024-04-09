@@ -28,7 +28,7 @@ model tokens {
   tokenId      Int            @id @default(autoincrement())
   tokenDate    DateTime       @default(now())
   customerName String
-  assignedTo   Int            @unique
+  assignedTo   Int
   staff        staffs         @relation(fields: [assignedTo], references: [staffId])
   transaction  transactions[] // One-to-many relationship: one token can have multiple transactions
 }
@@ -48,7 +48,7 @@ model transactions {
   transactionStatus String
   servedBy          Int
   serviceID         Int?
-  tokenID           Int
+  tokenID           Int       @unique
   service           services? @relation(fields: [serviceID], references: [serviceId])
-  token             tokens    @relation(fields: [servedBy], references: [assignedTo])
+  token             tokens    @relation(fields: [tokenID], references: [tokenId])
 }

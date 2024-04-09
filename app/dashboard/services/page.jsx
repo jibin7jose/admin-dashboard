@@ -41,7 +41,7 @@ export default async function ServicesPage(){
                         <td>
                             <div className={styles.buttons}>
                                 <Link href={`/services/edit/${service.serviceId}`}>
-                                    <button className={`${styles.button} ${styles.view}`}>Edit</button>
+                                    {/* <button className={`${styles.button} ${styles.view}`}>Edit</button> */}
                                 </Link>
                                 <button className={`${styles.button} ${styles.delete}`}>Delete</button>
                             </div>

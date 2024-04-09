@@ -5,45 +5,45 @@ import {Bar, BarChart, CartesianGrid, Legend, Rectangle, ResponsiveContainer, To
 const Chart = () => {
     const data = [
         {
-            name: 'Page A',
-            uv: 4000,
-            pv: 2400,
+            name: 'Sunday',
+            revenue: 4000,
+            profit: 2400,
             amt: 2400,
         },
         {
-            name: 'Page B',
-            uv: 3000,
-            pv: 1398,
+            name: 'Monday',
+            revenue: 3000,
+            profit: 1398,
             amt: 2210,
         },
         {
-            name: 'Page C',
-            uv: 2000,
-            pv: 9800,
+            name: 'Tuesday',
+            revenue: 3000,
+            profit: 2800,
             amt: 2290,
         },
         {
-            name: 'Page D',
-            uv: 2780,
-            pv: 3908,
+            name: 'Wednesday',
+            revenue: 2780,
+            profit: 3908,
             amt: 2000,
         },
         {
-            name: 'Page E',
-            uv: 1890,
-            pv: 4800,
+            name: 'Thurdsay',
+            revenue: 5890,
+            profit: 4800,
             amt: 2181,
         },
         {
-            name: 'Page F',
-            uv: 2390,
-            pv: 3800,
+            name: 'Friday',
+            revenue: 4390,
+            profit: 3800,
             amt: 2500,
         },
         {
-            name: 'Page G',
-            uv: 3490,
-            pv: 4300,
+            name: 'Saturday',
+            revenue: 5490,
+            profit: 4300,
             amt: 2100,
         },
     ];
@@ -67,8 +67,8 @@ const Chart = () => {
                     <YAxis />
                     <Tooltip contentStyle={{background: "#151c2c", border: "none"}} />
                     <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                    <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+                    <Bar dataKey="revenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+                    <Bar dataKey="profit" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
                 </BarChart>
             </ResponsiveContainer>
         </div>
