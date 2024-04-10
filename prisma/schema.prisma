@@ -21,7 +21,7 @@ model staffs {
   staffEmail String
   staffPhone String
   salary     Int
-  tokens     tokens[] // One-to-many relationship: one staff can have multiple tokens
+  tokens     tokens[]
 }
 
 model tokens {
@@ -30,7 +30,7 @@ model tokens {
   customerName String
   assignedTo   Int
   staff        staffs         @relation(fields: [assignedTo], references: [staffId])
-  transaction  transactions[] // One-to-many relationship: one token can have multiple transactions
+  transaction  transactions[]
 }
 
 model services {
@@ -39,7 +39,7 @@ model services {
   serviceCost   Int
   serviceProfit Int
   serviceLink   String
-  transaction   transactions[] // One-to-many relationship: one service can have multiple transactions
+  transaction   transactions[]
 }
 
 model transactions {
