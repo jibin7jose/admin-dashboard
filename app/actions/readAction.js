@@ -24,6 +24,17 @@ export const readStaffs = async () => {
     }
 };
 
+export const readAttendance = async (email) => {
+    try {
+        return await prisma.attendance.findMany({
+            where: {
+                userEmail: email
+            }
+        });
+    } catch (error) {
+        return error;
+    }
+}
 export const readServices = async () => {
     try {
         return await prisma.services.findMany();
@@ -62,7 +73,7 @@ export const readServiceId = async (serviceName) => {
 
 export const readRecentTransactions = async (staffId) => {
     try {
-        const transactions = await prisma.transactions.findMany({
+        return await prisma.transactions.findMany({
             where: {
                 servedBy: staffId
             },
@@ -71,8 +82,19 @@ export const readRecentTransactions = async (staffId) => {
             },
             take: 3
         });
+    } catch (error) {
+        return error;
+    }
+}
 
-        return transactions;
+export const readAttendanceCount = async(email) => {
+    try {
+        return await prisma.attendance.count({
+            where : {
+                email: email
+            },
+            distinct : ['date']
+        });
     } catch (error) {
         return error;
     }

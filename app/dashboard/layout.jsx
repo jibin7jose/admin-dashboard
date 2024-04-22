@@ -27,12 +27,12 @@ const Layout = ({children}) => {
             fetchUserData().then(r => console.log("User data fetched successfully"));
         }
     }, [session?.user?.email]);
-
+    const userEmail = session?.user?.email;
     const userRole = userData?.role;
     return (
         <div className={styles.container}>
             <div className={styles.menu}>
-                <Sidebar role={userRole} name={currentUser}/>
+                <Sidebar role={userRole} name={currentUser} email={userEmail}/>
             </div>
             <div className={styles.content}>
                 <Navbar/>

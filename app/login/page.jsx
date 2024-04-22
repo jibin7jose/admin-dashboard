@@ -4,6 +4,7 @@ import { signIn, useSession } from 'next-auth/react'
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation'
 import styles from '@/app/ui/login/login.module.css'
+import {checkInUser} from "@/app/actions/createAction";
 export default function Login() {
     const [data, setData] = useState({
         email: '',
@@ -17,7 +18,20 @@ export default function Login() {
         } else {
             router.push('/login')
         }
-    })
+
+    }, [session, router]);
+
+    useEffect(() => {
+        const checkIn = async () => {
+            try {
+                const checkInData = await checkInUser(data.email);
+                console.log(checkInData);
+            } catch (error) {
+                console.error('Error checking in user:', error);
+            }
+        }
+
+    }, [])
     const loginUser = (e) => {
         e.preventDefault()
         signIn('credentials', {...data, redirect: false})

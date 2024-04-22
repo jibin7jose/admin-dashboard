@@ -2,7 +2,7 @@
 
 import { PrismaClient } from "@prisma/client"
 import { withAccelerate } from '@prisma/extension-accelerate'
-const prisma = new PrismaClient().$extends(withAccelerate());
+const prisma = new PrismaClient();
 
 export const createToken = async (customerName, assignedTo) => {
     try {
@@ -35,16 +35,15 @@ export const createTransaction = async (transactionStatus, servedBy, tokenID) =>
 
 export const checkInUser = async (userEmail) => {
     try {
-        const checkInTime = new Date(); // Current date and time
         await prisma.attendance.create({
             data: {
-                user: {
-                    connect: { email: userEmail }, // Connect to the user based on email
-                },
-                checkIn: checkInTime,
+                userEmail: userEmail,
+                date: new Date().toDateString(), // Assuming current date
+                checkIn: new Date().toTimeString(), // Assuming current date and time
+                month: new Date().getMonth() + 1, // Adding 1 because getMonth() returns 0-based month (0 for January, 11 for December)
             },
-        });
-        return { success: true, message: 'User checked in successfully.' };
+        })
+        console.log("User checked in successfully");
     } catch (error) {
         console.error('Error checking in user:', error);
         return { success: false, message: 'Failed to check in user.' };

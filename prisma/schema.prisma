@@ -25,6 +25,7 @@ model user {
   centerCode     String
   akshayaCenter  akshayaCenter[]
   transactions   transactions[]
+  attendance     attendance[]
 }
 
 model account {
@@ -44,6 +45,16 @@ model account {
   user user @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+model attendance {
+  id        Int     @id @default(autoincrement())
+  userEmail String
+  date      String
+  checkIn   String
+  month     Int?
+  checkOut  String?
+  user      user    @relation(fields: [userEmail], references: [email])
 }
 
 model services {

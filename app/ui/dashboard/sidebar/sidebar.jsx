@@ -9,17 +9,27 @@ import { useRouter } from 'next/router';
 import { signOut, useSession } from 'next-auth/react';
 import toaster from 'react-hot-toast';
 import {readUser} from "@/app/actions/readAction";
+import {checkOutUser} from "@/app/actions/updateAction";
 
-function Sidebar({role, name}) {
+function Sidebar({role, name, email}) {
     // const router = useRouter();
     const [loading, setLoading] = useState(false);
     const handleLogout =  () => {
         setLoading(true);
         // console.log(session);
         signOut({ callbackUrl: '/', redirect: false }).then(() => {
-                toaster.success('User logged out successfully');
-                setLoading(false);
-                window.location.href = '/';
+            checkOutUser(email).then((result) => {
+                if (result.success) {
+                    console.log(result.message);
+                    // Attendance checked out successfully
+                } else {
+                    console.error(result.message);
+                    // Failed to check out attendance
+                }
+            });
+            toaster.success('User logged out successfully');
+            setLoading(false);
+            window.location.href = '/';
         });
     };
     const menuItems = [

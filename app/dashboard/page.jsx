@@ -8,6 +8,7 @@ import {useSession} from "next-auth/react";
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
 import {readUser} from "@/app/actions/readAction";
+import Attendance from "@/app/ui/dashboard/attendance/attendance";
 
 function Dashboard() {
     const {data: session} = useSession()
@@ -32,16 +33,17 @@ function Dashboard() {
         if (session?.user?.email) {
             fetchUserData();
         }
-    }, [session?.user?.email]);
-
-    const role = userData?.role;
+    }, [session?.user?.email]
+    );
+    const email = session?.user?.email;
+    // const role = userData?.role;
     return (
         <div className={styles.wrapper}>
             <div className={styles.main}>
                 <div className={styles.cards}>
                     <Card title="Daily"/>
                     <Card title="Weekly"/>
-                    <Card title="Monthly"/>
+                    <Attendance email={email} />
                 </div>
                 <Transactions />
                 <Chart />
