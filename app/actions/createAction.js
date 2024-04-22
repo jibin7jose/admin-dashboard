@@ -32,6 +32,26 @@ export const createTransaction = async (transactionStatus, servedBy, tokenID) =>
         console.error(error);
     }
 }
+
+export const checkInUser = async (userEmail) => {
+    try {
+        const checkInTime = new Date(); // Current date and time
+        await prisma.attendance.create({
+            data: {
+                user: {
+                    connect: { email: userEmail }, // Connect to the user based on email
+                },
+                checkIn: checkInTime,
+            },
+        });
+        return { success: true, message: 'User checked in successfully.' };
+    } catch (error) {
+        console.error('Error checking in user:', error);
+        return { success: false, message: 'Failed to check in user.' };
+    }
+};
+
+
     
 
 

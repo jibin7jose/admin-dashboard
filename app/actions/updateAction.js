@@ -64,3 +64,22 @@ export const updateStaff = async (staffId, data) => {
         return error;
     }
 };
+
+export const checkOutUser = async (userEmail) => {
+    try {
+        const checkOutTime = new Date(); // Current date and time
+        await prisma.attendance.updateMany({
+            where: {
+                user: { email: userEmail }, // Filter by user's email
+                checkOut: null, // Only update if checkOut is null (user hasn't checked out yet)
+            },
+            data: {
+                checkOut: checkOutTime,
+            },
+        });
+        return { success: true, message: 'User checked out successfully.' };
+    } catch (error) {
+        console.error('Error checking out user:', error);
+        return { success: false, message: 'Failed to check out user.' };
+    }
+};

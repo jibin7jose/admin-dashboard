@@ -4,28 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Successfully configured auth.">
-      <change afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/register/route.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/user.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/context/AuthContext.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/context/ToasterContext.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/prismadb.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/register/page.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/login/login.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ui/register/register.module.css" afterDir="false" />
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Successfully configured authentication.">
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/attendance/attendance.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/dashboard/attendance/attendance.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/createAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/createAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/actions/readAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/readAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/login/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/removeAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/removeAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/updateAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/updateAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/card/card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,15 +161,7 @@
       <workItem from="1713769875573" duration="147000" />
       <workItem from="1713770291818" duration="462000" />
       <workItem from="1713770778653" duration="6915000" />
-      <workItem from="1713783169963" duration="8476000" />
-    </task>
-    <task id="LOCAL-00015" summary="Configuring Main section and Rightbar">
-      <option name="closed" value="true" />
-      <created>1711293830091</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1711293830091</updated>
+      <workItem from="1713783169963" duration="9752000" />
     </task>
     <task id="LOCAL-00016" summary="Configuring Main section and Rightbar">
       <option name="closed" value="true" />
@@ -568,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712771889593</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Successfully configured auth.">
+      <option name="closed" value="true" />
+      <created>1713797841973</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1713797841973</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Configured Navbar" />
     <MESSAGE value="Configured Sidebar" />
     <MESSAGE value="Configuring Cards and Rightbar" />
@@ -599,7 +585,9 @@
     <MESSAGE value="Configuring the Delete action" />
     <MESSAGE value="Configuring the New Transactions Page" />
     <MESSAGE value="Reconfiguring the schema" />
+    <MESSAGE value="Redefining server actions" />
     <MESSAGE value="Successfully configured auth." />
-    <option name="LAST_COMMIT_MESSAGE" value="Successfully configured auth." />
+    <MESSAGE value="Successfully configured authentication." />
+    <option name="LAST_COMMIT_MESSAGE" value="Successfully configured authentication." />
   </component>
 </project>

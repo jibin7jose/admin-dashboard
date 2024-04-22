@@ -2,11 +2,11 @@
 
 import { PrismaClient } from "@prisma/client"
 import { withAccelerate } from '@prisma/extension-accelerate'
-const prisma = new PrismaClient().$extends(withAccelerate());
+const prisma = new PrismaClient();
 
 export const removeStaff = async (id) => {
     try {
-        const staffRemoved = await prisma.staffs.delete({
+        const staffRemoved = await prisma.user.delete({
             where: {
                 staffId: id
             },
@@ -32,9 +32,9 @@ export const removeService = async (id) => {
     }
 }
 
-export const removeToken = async (id) => {
+export const removeTransaction = async (id) => {
     try {
-        const tokenRemoved = await prisma.tokens.delete({
+        const tokenRemoved = await prisma.transactions.delete({
             where: {
                 tokenId: id
             },

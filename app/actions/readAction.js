@@ -1,7 +1,6 @@
 "use server"
 
 import {PrismaClient} from "@prisma/client"
-import {withAccelerate} from '@prisma/extension-accelerate'
 
 const prisma = new PrismaClient();
 
@@ -35,12 +34,11 @@ export const readServices = async () => {
 
 export const readSelectedService = async (currentService) => {
     try {
-        const service = await prisma.services.findUnique({
+        return await prisma.services.findUnique({
             where: {
                 serviceName: currentService
             }
         });
-        return service.serviceLink;
     } catch (error) {
         return error;
     }
