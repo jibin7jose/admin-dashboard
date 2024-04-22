@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,24 +8,42 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model staffs {
-  staffId    Int      @id @default(autoincrement())
-  staffName  String
-  staffRole  String
-  createdAt  DateTime @default(now())
-  staffEmail String
-  staffPhone String
-  salary     Int
-  tokens     tokens[]
+model user {
+  id             Int             @id @default(autoincrement())
+  name           String?
+  email          String          @unique
+  emailVerified  DateTime?
+  image          String?
+  hashedPassword String?
+  role           String
+  managedBy      String?
+  phoneNumber    String?
+  status         String          @default("Idle")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  accounts       account[]
+  centerCode     String
+  akshayaCenter  akshayaCenter[]
+  transactions   transactions[]
 }
 
-model tokens {
-  tokenId      Int            @id @default(autoincrement())
-  tokenDate    DateTime       @default(now())
-  customerName String
-  assignedTo   Int
-  staff        staffs         @relation(fields: [assignedTo], references: [staffId])
-  transaction  transactions[]
+model account {
+  id                Int     @id @default(autoincrement())
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
 
 model services {
@@ -39,16 +52,31 @@ model services {
   serviceCost   Int
   serviceProfit Int
   serviceLink   String
-  transaction   transactions[]
+  transactions  transactions[]
+}
+
+model akshayaCenter {
+  centerEmail  String         @id @unique
+  centerCode   String         @unique
+  address      String
+  phoneNumber  String
+  gstNumber    String?
+  user         user           @relation(fields: [centerEmail], references: [email])
+  transactions transactions[]
 }
 
 model transactions {
-  transactionId     Int       @id @default(autoincrement())
-  transactionTime   DateTime  @default(now())
+  transactionId     Int            @id @default(autoincrement())
+  transactionTime   DateTime       @default(now())
   transactionStatus String
   servedBy          Int
+  customerName      String
+  assignedTo        String
+  outsourceTo       String?
+  insourceFrom      String?
   serviceID         Int?
-  tokenID           Int       @unique
-  service           services? @relation(fields: [serviceID], references: [serviceId])
-  token             tokens    @relation(fields: [tokenID], references: [tokenId])
+  service           services?      @relation(fields: [serviceID], references: [serviceId])
+  user              user           @relation(fields: [assignedTo], references: [email])
+  akshayaCenter     akshayaCenter? @relation(fields: [centerEmail], references: [centerEmail])
+  centerEmail       String?
 }

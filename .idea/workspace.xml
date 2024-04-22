@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Configuring the New Transactions Page">
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Successfully configured auth.">
+      <change afterPath="$PROJECT_DIR$/app/api/auth/[...nextauth]/route.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/register/route.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/user.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/context/AuthContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/context/ToasterContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/libs/prismadb.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/register/page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/login/login.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ui/register/register.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/createAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/createAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/readAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/readAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/sidebar/sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +76,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nabiel/WebstormProjects/manager-dashboard&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nabiel/WebstormProjects/admin-dashboard/app&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -79,6 +98,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/ui/dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -140,14 +160,21 @@
       <workItem from="1712420107395" duration="1525000" />
       <workItem from="1712470879535" duration="15657000" />
       <workItem from="1712576306746" duration="1223000" />
-    </task>
-    <task id="LOCAL-00014" summary="Configuring Main section and Rightbar">
-      <option name="closed" value="true" />
-      <created>1711293097742</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1711293097742</updated>
+      <workItem from="1712771844086" duration="55000" />
+      <workItem from="1713009871426" duration="633000" />
+      <workItem from="1713457851463" duration="26000" />
+      <workItem from="1713466470049" duration="17000" />
+      <workItem from="1713603834870" duration="94000" />
+      <workItem from="1713605264483" duration="838000" />
+      <workItem from="1713625908334" duration="13000" />
+      <workItem from="1713712118128" duration="631000" />
+      <workItem from="1713758218263" duration="351000" />
+      <workItem from="1713758651215" duration="4530000" />
+      <workItem from="1713767900614" duration="352000" />
+      <workItem from="1713769875573" duration="147000" />
+      <workItem from="1713770291818" duration="462000" />
+      <workItem from="1713770778653" duration="6915000" />
+      <workItem from="1713783169963" duration="8476000" />
     </task>
     <task id="LOCAL-00015" summary="Configuring Main section and Rightbar">
       <option name="closed" value="true" />
@@ -533,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712589673441</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Reconfiguring the schema">
+      <option name="closed" value="true" />
+      <created>1712771889593</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1712771889593</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,6 +598,8 @@
     <MESSAGE value="Configuring the Add Staffs Page" />
     <MESSAGE value="Configuring the Delete action" />
     <MESSAGE value="Configuring the New Transactions Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuring the New Transactions Page" />
+    <MESSAGE value="Reconfiguring the schema" />
+    <MESSAGE value="Successfully configured auth." />
+    <option name="LAST_COMMIT_MESSAGE" value="Successfully configured auth." />
   </component>
 </project>
