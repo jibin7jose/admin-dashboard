@@ -80,14 +80,13 @@ model transactions {
   transactionId     Int            @id @default(autoincrement())
   transactionTime   DateTime       @default(now())
   transactionStatus String
-  servedBy          Int
+  servedBy          String
   customerName      String
-  assignedTo        String
-  outsourceTo       String?
+  outsourceTo       String? // Changed to optional
   insourceFrom      String?
   serviceID         Int?
   service           services?      @relation(fields: [serviceID], references: [serviceId])
-  user              user           @relation(fields: [assignedTo], references: [email])
+  user              user           @relation(fields: [servedBy], references: [email])
   akshayaCenter     akshayaCenter? @relation(fields: [centerEmail], references: [centerEmail])
   centerEmail       String?
 }

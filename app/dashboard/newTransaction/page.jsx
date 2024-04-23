@@ -7,7 +7,6 @@ import { createToken, createTransaction } from '@/app/actions/createAction';
 import styles from '@/app/ui/dashboard/newTransaction/newTransaction.module.css';
 
 const NewTransaction = () => {
-    
     const [customerName, setCustomerName] = useState('');
     const [selectedStaff, setSelectedStaff] = useState(0);
     const [selectedService, setSelectedService] = useState('');
@@ -115,11 +114,10 @@ const NewTransaction = () => {
                 <select value={selectedStaff} onChange={handleStaffSelection} required>
                     <option value="">Select Staff</option>
                     {staffs.map((staff) => (
-                        <option key={staff.staffId} value={staff.staffId}>
-                            {staff.staffName}
+                        <option key={staff.id} value={staff.id}>
+                            {staff.name}
                         </option>
                     ))}
-                    <option value="Self">Self</option>
                 </select>
                 {selectedStaff === 'Self' && (
                     <button className={styles.button} type="button" onClick={handleAssignToSelf}>

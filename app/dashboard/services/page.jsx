@@ -1,25 +1,27 @@
 // pages/ServicesPage.js
-
+'use client'
 import Link from 'next/link';
 import styles from 'app/ui/dashboard/services/services.module.css';
 import Search from '@/app/ui/dashboard/search/search';
-import Pagination from '@/app/ui/dashboard/pagination/pagination';
 import {PrismaClient} from '@prisma/client';
+import {readServices} from "@/app/actions/readAction";
+import {useEffect, useState} from "react";
 
-const prisma = new PrismaClient();
-
-async function getService() {
-    'use server'
-    return await prisma.services.findMany();
-}
-const services = await getService();
-export default async function ServicesPage(){
-
+export default function ServicesPage(){
+    const [services, setServices] = useState([])
+    useEffect(() => {
+        const fetchServices = async () => {
+            const servicesData = await readServices();
+            setServices(servicesData);
+        };
+        fetchServices();
+    }, []);
+    console.log(services)
     return (
         <div className={styles.container}>
             <div className={styles.top}>
-                <Search placeholder="Search for a service..." />
-                <Link href="services/add">
+                {/*<Search placeholder="Search for a service..." />*/}
+                <Link href="/services/add">
                     <button className={styles.addButton}>Add New Service</button>
                 </Link>
             </div>
@@ -35,13 +37,13 @@ export default async function ServicesPage(){
                 <tbody>
                 {services.map((service) => (
                     <tr key={service.serviceId}>
-                        <td><a href={service.serviceLink}>{service.serviceName}</a></td>
+                        <td>{service.serviceName}</td>
                         <td>{service.serviceCost}</td>
                         <td>{service.serviceProfit}</td>
                         <td>
                             <div className={styles.buttons}>
-                                <Link href={`/services/edit/${service.serviceId}`}>
-                                    {/* <button className={`${styles.button} ${styles.view}`}>Edit</button> */}
+                                <Link href={`/dashboard/services/edit/${service.serviceId}`}>
+                                     {/*<button className={`${styles.button} ${styles.view}`}>Edit</button>*/}
                                 </Link>
                                 <button className={`${styles.button} ${styles.delete}`}>Delete</button>
                             </div>
@@ -50,7 +52,6 @@ export default async function ServicesPage(){
                 ))}
                 </tbody>
             </table>
-            {/*<Pagination />*/}
         </div>
     );
 }

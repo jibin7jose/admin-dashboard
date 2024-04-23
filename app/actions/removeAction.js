@@ -1,18 +1,16 @@
 "use server"
 
-import { PrismaClient } from "@prisma/client"
-import { withAccelerate } from '@prisma/extension-accelerate'
+import {PrismaClient} from "@prisma/client"
+
 const prisma = new PrismaClient();
 
-export const removeStaff = async (id) => {
+export const removeStaff = async (staffId) => {
     try {
-        const staffRemoved = await prisma.user.delete({
+        return await prisma.user.delete({
             where: {
-                staffId: id
+                id: staffId
             },
-            cacheStrategy: { ttl: 20 },
         });
-        return staffRemoved;
     } catch (error) {
         return error;
     }
@@ -20,13 +18,11 @@ export const removeStaff = async (id) => {
 
 export const removeService = async (id) => {
     try {
-        const serviceRemoved = await prisma.services.delete({
+        return await prisma.services.delete({
             where: {
                 serviceId: id
             },
-            cacheStrategy: { ttl: 20 },
         });
-        return serviceRemoved;
     } catch (error) {
         return error;
     }
@@ -34,13 +30,11 @@ export const removeService = async (id) => {
 
 export const removeTransaction = async (id) => {
     try {
-        const tokenRemoved = await prisma.transactions.delete({
+        return await prisma.transactions.delete({
             where: {
                 tokenId: id
             },
-            cacheStrategy: { ttl: 20 },
         });
-        return tokenRemoved;
     } catch (error) {
         return error;
     }

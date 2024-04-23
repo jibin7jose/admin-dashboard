@@ -20,16 +20,13 @@ const Staffs = () => {
     }, []);
     const handleRemove = async (staffId) => {
         await removeStaff(staffId);
-        const updatedStaffs = staffs.filter((staff) => staff.staffId !== staffId);
+        const updatedStaffs = staffs.filter((staff) => staff.id !== staffId);
         setStaffs(updatedStaffs);
     };
     return (
         <div className={styles.container}>
             <div className={styles.top}>
-                <Search placeholder="Search for a staff..." />
-                <Link href="staffs/add/">
-                    <button className={styles.addButton}>Add New Staff</button>
-                </Link>
+               
             </div>
             <table className={styles.table}>
                 <thead>
@@ -37,28 +34,25 @@ const Staffs = () => {
                         <td>Name</td>
                         <td>Role</td>
                         <td>Email</td>
-                        <td>Phone No.</td>
-                        <td>Salary</td>
-                        <td>Action</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
                     {staffs && staffs.map(({ 
-                        staffId, 
-                        staffName, 
-                        staffRole, 
-                        staffEmail, 
-                        staffPhone, 
+                        id,
+                        name,
+                        role,
+                        email,
+                        phoneNumber,
                         salary 
                     }) => (
                         <StaffRow
-                            key={staffId}
-                            staffId={staffId}
-                            staffName={staffName}
-                            staffRole={staffRole}
-                            staffEmail={staffEmail}
-                            staffPhone={staffPhone}
-                            salary={salary}
+                            key={id}
+                            staffId={id}
+                            staffName={name}
+                            staffRole={role}
+                            staffEmail={email}
+
                             handleRemove={handleRemove}
                         />
                     ))}
