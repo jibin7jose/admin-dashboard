@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Successfully configured authentication.">
-      <change afterPath="$PROJECT_DIR$/app/dashboard/services/edit/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/removeAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/removeAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/createAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/createAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/actions/readAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/readAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/staffs/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,15 +160,7 @@
       <workItem from="1713770291818" duration="462000" />
       <workItem from="1713770778653" duration="6915000" />
       <workItem from="1713783169963" duration="9752000" />
-      <workItem from="1713799032183" duration="16709000" />
-    </task>
-    <task id="LOCAL-00018" summary="Implementing Transactions Table.">
-      <option name="closed" value="true" />
-      <created>1711296495577</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1711296495577</updated>
+      <workItem from="1713799032183" duration="23194000" />
     </task>
     <task id="LOCAL-00019" summary="Implementing Transactions Table.">
       <option name="closed" value="true" />
@@ -554,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713807486556</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Successfully configured authentication.">
+      <option name="closed" value="true" />
+      <created>1713894187675</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1713894187675</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

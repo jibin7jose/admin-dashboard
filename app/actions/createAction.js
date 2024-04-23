@@ -4,27 +4,20 @@ import { PrismaClient } from "@prisma/client"
 import { withAccelerate } from '@prisma/extension-accelerate'
 const prisma = new PrismaClient();
 
-export const createToken = async (customerName, assignedTo) => {
-    try {
-        const token = await prisma.tokens.create({
-            data: {
-                customerName,
-                assignedTo
-            }
-        });
-        return parseInt(token.tokenId);
-    } catch (error) {
-        console.error(error);
-    }
-}
 
-export const createTransaction = async (transactionStatus, servedBy, tokenID) => {
+
+export const createTransaction = async (transactionStatus, servedBy, customerName, serviceId, cost, profit) => {
+
     try {
+
         const transaction = await prisma.transactions.create({
             data: {
                 transactionStatus,
                 servedBy,
-                tokenID
+                customerName,
+                serviceID: serviceId,
+                cost,
+                profit
             }
         });
         return parseInt(transaction.transactionId);

@@ -85,6 +85,8 @@ model transactions {
   outsourceTo       String? // Changed to optional
   insourceFrom      String?
   serviceID         Int?
+  cost              Int?
+  profit            Int?
   service           services?      @relation(fields: [serviceID], references: [serviceId])
   user              user           @relation(fields: [servedBy], references: [email])
   akshayaCenter     akshayaCenter? @relation(fields: [centerEmail], references: [centerEmail])

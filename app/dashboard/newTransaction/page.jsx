@@ -1,28 +1,47 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
-import { readStaffs, readServices, readSelectedService } from '@/app/actions/readAction';
-import { createToken, createTransaction } from '@/app/actions/createAction';
+import {readSelectedService, readServices, readUser} from '@/app/actions/readAction';
+import {createTransaction} from '@/app/actions/createAction';
 
 import styles from '@/app/ui/dashboard/newTransaction/newTransaction.module.css';
+import {useSession} from "next-auth/react";
+import JsPDF from "jspdf";
 
 const NewTransaction = () => {
     const [customerName, setCustomerName] = useState('');
-    const [selectedStaff, setSelectedStaff] = useState(0);
-    const [selectedService, setSelectedService] = useState('');
-    const [selfAssigned, setSelfAssigned] = useState(false);
-    const [serviceLink, setServiceLink] = useState('');
-    const [showLinks, setShowLinks] = useState(false);
-    const [staffs, setStaffs] = useState([]);
+    const [selectedService, setSelectedService] = useState([]);
+    const [selectedServiceData, setSelectedServiceData] = useState([]);
     const [services, setServices] = useState([]);
     const [transactionStatus, setTransactionStatus] = useState('Pending');
+    const [showLink, setShowLink] = useState(false);
+    const [userData, setUserData] = useState(null);
+    const { data: session } = useSession();
+
+    const [serviceLink, setServiceLink] = useState('');
+    const [serviceCost, setServiceCost] = useState(null);
+    const [serviceProfit, setServiceProfit] = useState(null);
+    const [serviceName, setServiceName] = useState('');
+    const [transactionID, setTransactionID] = useState(null);
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const userData = await readUser(session?.user?.email);
+                setUserData(userData);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        if (session?.user?.email) {
+            fetchUserData().then(r => console.log("User data fetched successfully"));
+        }
+    }, [session?.user?.email]);
+    const userEmail = session?.user?.email;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const staffData = await readStaffs();
-                setStaffs(staffData);
-
                 const serviceData = await readServices();
                 setServices(serviceData);
             } catch (error) {
@@ -33,69 +52,74 @@ const NewTransaction = () => {
     }, []);
 
     useEffect(() => {
-        const fetchServiceLink = async () => {
+        const fetchSelectedServiceData = async () => {
             try {
                 const serviceData = await readSelectedService(selectedService);
-                setServiceLink(serviceData.serviceLink);
+                setSelectedServiceData(serviceData);
+                setServiceLink(serviceData.serviceLink)
+                setServiceProfit(serviceData.serviceProfit)
+                setServiceCost(serviceData.serviceCost)
+                setServiceName(serviceData.serviceName)
             } catch (error) {
                 console.error(error);
             }
         };
 
         if (selectedService) {
-            fetchServiceLink();
+            fetchSelectedServiceData();
         }
     }, [selectedService]);
 
 
     const handleServiceSelection = (event) => {
-        const selectedServiceId = event.target.value;
-        setSelectedService(selectedServiceId);
+        setSelectedService(parseInt(event.target.value));
+        setShowLink(true);
     };
 
     const handleCustomerNameChange = (event) => {
         setCustomerName(event.target.value);
     };
 
-    const handleStaffSelection = (event) => {
-        setSelectedStaff(event.target.value);
-    };
-
-    const handleAssignToSelf = () => {
-        setSelectedStaff('Self');
-        setSelfAssigned(true);
-    };
-
     const handleMarkAsFailed = () => {
-        console.log('Marking transaction as failed...');
         setTransactionStatus('Failed');
     };
 
     const handleMarkAsComplete = () => {
-        console.log('Marking transaction as complete...');
         setTransactionStatus('Completed');
     };
+    const generateBill = (transactionID) => {
+        const transactionDate = new Date().toLocaleString();
+        try {
+            const doc = new JsPDF();
+            let y = 10;
+            doc.text(`Transaction ID: ${transactionID}`, 10, y);
+            y += 10;
+            doc.text(`Transaction Date: ${transactionDate}`, 10, y);
+            y += 10;
+            doc.text(`Customer Name: ${customerName}`, 10, y);
+            y += 10;
+            doc.text(`Service Name: ${serviceName}`, 10, y);
+            y += 10;
+            doc.text(`Service Cost: Rs. ${serviceCost}`, 10, y);
 
+            y += 20;
+            doc.text('Thank you!', 10, y);
+            doc.save(`pdf_${Date.now()}.pdf`);
+        } catch (error) {
+            console.error('Error generating PDF:', error);
+        }
+
+    }
     const handleSubmit = async (event) => {
+        console.log(transactionStatus, userEmail , customerName, selectedService)
+
         event.preventDefault();
         try {
-            const assignedTo = parseInt(selectedStaff);
-            
-            const tokenID = await createToken(customerName, assignedTo);
-            console.log('Token created: ', tokenID);
+            const transactionID = await createTransaction(transactionStatus, userEmail , customerName, selectedService, serviceCost, serviceProfit);
+            console.log(transactionID+" added to the database");
 
-            // const selectedService = 1;
-            const transactionStatus = 'Pending';
-            const servedBy = assignedTo;
-
-            const transactionID = await createTransaction(transactionStatus, servedBy, tokenID);
-            console.log('Transaction created: ', transactionID);
-            setCustomerName('');
-            setSelectedStaff('');
-            setSelectedService('');
-            setTransactionStatus('Pending');
-            setShowLinks(false);
-            
+            generateBill(transactionID);
+            setCustomerName('')
         } catch (error) {
             console.error('Error:', error.message);
         }
@@ -111,50 +135,31 @@ const NewTransaction = () => {
                     onChange={handleCustomerNameChange}
                     required
                 />
-                <select value={selectedStaff} onChange={handleStaffSelection} required>
-                    <option value="">Select Staff</option>
-                    {staffs.map((staff) => (
-                        <option key={staff.id} value={staff.id}>
-                            {staff.name}
-                        </option>
-                    ))}
-                </select>
-                {selectedStaff === 'Self' && (
-                    <button className={styles.button} type="button" onClick={handleAssignToSelf}>
-                        Self Assign
-                    </button>
-                )}
-                {!showLinks && selfAssigned && (
-                    <>
-                        <select value={selectedService} onChange={handleServiceSelection} required>
-                            <option value="">Select Service</option>
-                            {services.map((service) => (
-                                <option key={service.serviceId} value={service.serviceId}>
-                                    {service.serviceName}
-                                </option>
-                            ))}
-                        </select>
-                        <div className={styles.bottomContainer}>
-                            <a href={serviceLink} target="_blank" rel="noopener noreferrer">
-                                Go to Service link
-                            </a>
-                            <div className={styles.buttonSet}>
-                                <button className={styles.button} type="button" onClick={handleMarkAsComplete}>
-                                    Mark as Complete
-                                </button>
-                                <button className={styles.button} type="button" onClick={handleMarkAsFailed}>
-                                    Mark as Failed
-                                </button>
-                            </div>
-                            <button className={`${styles.button} ${styles.submit}`} type="submit">
-                                Complete Transaction
+
+                <>
+                    <select value={selectedService} onChange={handleServiceSelection} required>
+                        <option value="">Select Service</option>
+                        {services.map((service) => (
+                            <option key={service.serviceId} value={service.serviceId}>
+                                {service.serviceName}
+                            </option>
+                        ))}
+                    </select>
+                    <div className={styles.bottomContainer}>
+                        {showLink && (<a href={serviceLink}>Go to Service Link</a>)}
+                        <div className={styles.buttonSet}>
+                            <button className={styles.button} type="button" onClick={handleMarkAsComplete}>
+                                Mark as Complete
+                            </button>
+                            <button className={styles.button} type="button" onClick={handleMarkAsFailed}>
+                                Mark as Failed
                             </button>
                         </div>
-                    </>
-                )}
-                {selectedStaff !== 'Self' && (
-                    <button className={styles.button} type="submit">Assign to Staff {selectedStaff}</button>
-                )}
+                        <button className={`${styles.button} ${styles.submit}`} type="submit">
+                            Complete Transaction
+                        </button>
+                    </div>
+                </>
             </form>
         </div>
     );

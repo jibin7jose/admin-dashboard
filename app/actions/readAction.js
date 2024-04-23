@@ -15,7 +15,18 @@ export const readUser = async (userEmail) => {
         return error;
     }
 }
+export const readUserEmail = async (id) => {
+    try {
+        return await prisma.user.findUnique({
+            where: {
+                id: id,
+            }
+        });
+    } catch (error) {
+        return error;
+    }
 
+}
 export const readStaffs = async () => {
     try {
         return await prisma.user.findMany();
@@ -47,7 +58,7 @@ export const readSelectedService = async (currentService) => {
     try {
         return await prisma.services.findUnique({
             where: {
-                serviceName: currentService
+                serviceId: currentService
             }
         });
     } catch (error) {
