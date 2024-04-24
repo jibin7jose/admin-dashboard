@@ -17,7 +17,7 @@
 
 .table td {
     padding: 10px;
-    border: 1px solid var(--bg); /* Add borders for better separation */
+  /* Add borders for better separation */
     text-align: center; /* Center-align text in cells */
 }
 

@@ -66,11 +66,11 @@ function Sidebar({role, name, email}) {
                     path: "/dashboard/myTransactions",
                     icon: <MdAttachMoney />
                 },
-                (role==='Entrepreneur') && {
-                    title: "Reports",
-                    path: "/dashboard/reports",
-                    icon: <MdAnalytics />
-                },
+                // (role==='Entrepreneur') && {
+                //     title: "Reports",
+                //     path: "/dashboard/reports",
+                //     icon: <MdAnalytics />
+                // },
 
             ].filter(Boolean),
         },

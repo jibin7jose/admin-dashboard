@@ -1,75 +1,51 @@
 "use client"
 import styles from './chart.module.css'
-import {Bar, BarChart, CartesianGrid, Legend, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {useEffect, useState} from "react";
+import {readMyTransactions, readUser} from "@/app/actions/readAction";
+import {useSession} from "next-auth/react";
 
 const Chart = () => {
-    const data = [
-        {
-            name: 'Sunday',
-            revenue: 4000,
-            profit: 2400,
-            amt: 2400,
-        },
-        {
-            name: 'Monday',
-            revenue: 3000,
-            profit: 1398,
-            amt: 2210,
-        },
-        {
-            name: 'Tuesday',
-            revenue: 3000,
-            profit: 2800,
-            amt: 2290,
-        },
-        {
-            name: 'Wednesday',
-            revenue: 2780,
-            profit: 3908,
-            amt: 2000,
-        },
-        {
-            name: 'Thurdsay',
-            revenue: 5890,
-            profit: 4800,
-            amt: 2181,
-        },
-        {
-            name: 'Friday',
-            revenue: 4390,
-            profit: 3800,
-            amt: 2500,
-        },
-        {
-            name: 'Saturday',
-            revenue: 5490,
-            profit: 4300,
-            amt: 2100,
-        },
-    ];
+    const [cdata, setData] =  useState([]);
+    const [userData, setUserData] = useState(null);
+    const { data: session } = useSession();
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const userData = await readUser(session?.user.email);
+                setUserData(userData);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        if (session?.user?.email) {
+            fetchUserData().then(r => console.log("User data fetched successfully"));
+        }
+    }, [session?.user?.email]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const cdata = await readMyTransactions(session?.user?.email);
+                setData(cdata);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Weekly Recap</h2>
-            <ResponsiveContainer width="100%" height="90%">
-                <BarChart
-                    width={500}
-                    height={300}
-                    data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
+            <h2 className={styles.title}>Daily Profit Stats</h2>
+            <ResponsiveContainer width="100%" height={250}>
+                <LineChart data={cdata}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="transactionTime" />
                     <YAxis />
-                    <Tooltip contentStyle={{background: "#151c2c", border: "none"}} />
+                    <Tooltip />
                     <Legend />
-                    <Bar dataKey="revenue" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                    <Bar dataKey="profit" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-                </BarChart>
+                    <Line type="monotone" dataKey="profit" stroke="#8884d8" strokeWidth={2} />
+                </LineChart>
             </ResponsiveContainer>
         </div>
     );
