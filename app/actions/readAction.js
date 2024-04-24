@@ -66,6 +66,19 @@ export const readSelectedService = async (currentService) => {
     }
 };
 
+export const readMyTransactions = async (email) => {
+    try {
+        return await prisma.transactions.findMany({
+            where: {
+                servedBy: email
+            }
+        });
+    } catch (error) {
+        return error;
+    }
+
+}
+
 export const readServiceId = async (serviceName) => {
     try {
         const service = await prisma.services.findUnique({
@@ -82,11 +95,11 @@ export const readServiceId = async (serviceName) => {
     }
 };
 
-export const readRecentTransactions = async (staffId) => {
+export const readRecentTransactions = async (email) => {
     try {
         return await prisma.transactions.findMany({
             where: {
-                servedBy: staffId
+                servedBy: email
             },
             orderBy: {
                 transactionId: 'desc'

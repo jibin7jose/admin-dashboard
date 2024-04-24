@@ -41,11 +41,11 @@ function Sidebar({role, name, email}) {
                     path: "/dashboard",
                     icon: <MdDashboard />
                 },
-                (role==='Entrepreneur' || role==='M-Staff') && {
-                    title: "Queue Manager",
-                    path: "/dashboard/queueManager",
-                    icon: <MdSupervisedUserCircle />
-                },
+                // (role==='Entrepreneur' || role==='M-Staff') && {
+                //     title: "Queue Manager",
+                //     path: "/dashboard/queueManager",
+                //     icon: <MdSupervisedUserCircle />
+                // },
                 (role==='Entrepreneur') && {
                     title: "Services",
                     path: "/dashboard/services",

@@ -1,13 +1,44 @@
+'use client'
 import styles from '@/app/ui/dashboard/myTransactions/myTransactions.module.css'
 import Search from '@/app/ui/dashboard/search/search';
-
+import {useSession} from "next-auth/react";
+import {readMyTransactions, readUser} from "@/app/actions/readAction";
+import transactions from "@/app/ui/dashboard/transactions/transactions";
+import {useEffect, useState} from "react";
 const MyTransactions = () => {
+    const [userData, setUserData] = useState(null);
+    const { data: session } = useSession();
+    const [transactions, setTransactions] = useState([]);
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const userData = await readUser(session?.user.email);
+                setUserData(userData);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        if (session?.user?.email) {
+            fetchUserData().then(r => console.log("User data fetched successfully"));
+        }
+    }, [session?.user?.email]);
+
+    useEffect(() => {
+        const fetchTransactions = async () => {
+            try {
+                const transactions = await readMyTransactions(session?.user?.email);
+                setTransactions(transactions);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchTransactions();
+    }, [session?.user?.email]);
+
     return (
         <div className={styles.container}>
-            <p>Under Development - Awaiting Authentication</p>&nbsp;
-            <div className={styles.top}>
-                <Search placeholder="Search for a customer..." />
-            </div>
+
             <table className={styles.table}>
                 <thead>
                 <tr>
@@ -15,25 +46,19 @@ const MyTransactions = () => {
                     <td>Date</td>
                     <td>Customer Name</td>
                     <td>Transaction Status</td>
-                    <td>Action</td>
                 </tr>
                 </thead>
                 <tbody>
-                {/* {services.map((service) => (
-                    <tr key={service.serviceId}>
-                        <td><a href={service.serviceLink}>{service.serviceName}</a></td>
-                        <td>{service.serviceCost}</td>
-                        <td>{service.serviceProfit}</td>
+                {transactions.map((transaction) => (
+                    <tr key={transaction.transactionId}>
+                        <td>{transaction.transactionId}</td>
+                        <td>{transaction.transactionTime.toLocaleString()}</td>
+                        <td>{transaction.customerName}</td>
                         <td>
-                            <div className={styles.buttons}>
-                                <Link href={`/services/edit/${service.serviceId}`}>
-                                    <button className={`${styles.button} ${styles.view}`}>Edit</button>
-                                </Link>
-                                <button className={`${styles.button} ${styles.delete}`}>Delete</button>
-                            </div>
+                            {transaction.transactionStatus}
                         </td>
                     </tr>
-                ))} */}
+                ))}
                 </tbody>
             </table>
         </div>

@@ -3,7 +3,7 @@
 
 import { PrismaClient } from "@prisma/client"
 import { withAccelerate } from '@prisma/extension-accelerate'
-const prisma = new PrismaClient().$extends(withAccelerate());
+const prisma = new PrismaClient();
 
 export const updateToken = async (tokenId, data) => {
     try {
@@ -67,7 +67,7 @@ export const updateStaff = async (staffId, data) => {
 
 export const checkOutUser = async (userEmail) => {
     try {
-        const checkOutTime = new Date(); // Current date and time
+        const checkOutTime = new Date().toLocaleString(); // Current date and time
         await prisma.attendance.updateMany({
             where: {
                 user: { email: userEmail }, // Filter by user's email
