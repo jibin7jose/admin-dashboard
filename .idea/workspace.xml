@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Successfully configured authentication.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="99b6974d-d6ba-4329-81fa-f11bfc6566a6" name="Changes" comment="Successfully configured Charts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/createAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/createAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/actions/readAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/actions/readAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/newTransaction/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/services/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/services/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/attendance/attendance.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ui/dashboard/attendance/attendance.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,30 +156,8 @@
       <workItem from="1713770778653" duration="6915000" />
       <workItem from="1713783169963" duration="9752000" />
       <workItem from="1713799032183" duration="23194000" />
-    </task>
-    <task id="LOCAL-00019" summary="Implementing Transactions Table.">
-      <option name="closed" value="true" />
-      <created>1711297116205</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1711297116205</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Configuring Themes">
-      <option name="closed" value="true" />
-      <created>1711337308290</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1711337308291</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Configuring Themes">
-      <option name="closed" value="true" />
-      <created>1711338064822</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1711338064822</updated>
+      <workItem from="1713901322648" duration="10980000" />
+      <workItem from="1713931137274" duration="1696000" />
     </task>
     <task id="LOCAL-00022" summary="Configuring Themes">
       <option name="closed" value="true" />
@@ -554,7 +527,31 @@
       <option name="project" value="LOCAL" />
       <updated>1713894187675</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Successfully configured NewTransaction process and Bill Generator">
+      <option name="closed" value="true" />
+      <created>1713905713870</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1713905713871</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Successfully configured Recent Transactions and MyTransactions">
+      <option name="closed" value="true" />
+      <created>1713924683597</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1713924683597</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Successfully configured Charts">
+      <option name="closed" value="true" />
+      <created>1713926038586</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1713926038586</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,9 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Configured Navbar" />
-    <MESSAGE value="Configured Sidebar" />
-    <MESSAGE value="Configuring Cards and Rightbar" />
     <MESSAGE value="Configuring Main section and Rightbar" />
     <MESSAGE value="Fixed Navbar" />
     <MESSAGE value="Implementing Transactions Table." />
@@ -587,6 +581,9 @@
     <MESSAGE value="Redefining server actions" />
     <MESSAGE value="Successfully configured auth." />
     <MESSAGE value="Successfully configured authentication." />
-    <option name="LAST_COMMIT_MESSAGE" value="Successfully configured authentication." />
+    <MESSAGE value="Successfully configured NewTransaction process and Bill Generator" />
+    <MESSAGE value="Successfully configured Recent Transactions and MyTransactions" />
+    <MESSAGE value="Successfully configured Charts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Successfully configured Charts" />
   </component>
 </project>

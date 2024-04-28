@@ -23,7 +23,7 @@ export async function POST(request) {
                 status: 400,
             });
         }
-        // there's something wrong
+
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = await prisma.user.create({

@@ -17,7 +17,7 @@ const Attendance = ({email}) => {
     const ordinalDayCount = new Date().getDate();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const [attendance, setAttendance] = useState(null);
-    const [distinctDatesCount, setDistinctDatesCount] = useState(2);
+    const [distinctDatesCount, setDistinctDatesCount] = useState(1);
     // const distinctDatesCount = attendance.reduce((count, entry) => {
     //     // Extract the date from each attendance entry
     //     const dateString = entry.date.toDateString(); // Convert to string for simplicity
